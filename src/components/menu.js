@@ -10,8 +10,8 @@ const Menu = ({ location, lang, menuItems, languages }) => {
     <nav className="main-menu">
       <ul className="main-menu__items">
         {menuItems.map(menuItem => (
-          <li key={menuItem} className="main-menu__item">
-            <Link to={`/${menuItem.replace(" ", "-")}`}>{menuItem}</Link>
+          <li key={menuItem.name} className="main-menu__item">
+            <Link to={menuItem.path}>{menuItem.name}</Link>
           </li>
         ))}
       </ul>
@@ -21,7 +21,7 @@ const Menu = ({ location, lang, menuItems, languages }) => {
 }
 
 Menu.propTypes = {
-  menuItems: PropTypes.arrayOf(PropTypes.string),
+  menuItems: PropTypes.arrayOf(PropTypes.object),
   languages: PropTypes.arrayOf(PropTypes.string),
 }
 

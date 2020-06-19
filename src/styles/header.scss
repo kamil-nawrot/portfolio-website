@@ -5,10 +5,13 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    background: white;
+    margin: 0 80px;
+    background: $color-white;
+    font-family: 'Josefin Sans';
 
     &__logo {
         display: inline-block;
+        margin: 0;
 
         &--accent {
             color: $color-theme;

@@ -4,7 +4,20 @@ module.exports = {
     title: `KamilNawrot`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    menuItems: ['start', 'projects', 'blog'],
+    menuItems: [
+      {
+        name: 'start',
+        path: '/',
+      },
+      {
+        name: 'portfolio',
+        path: '/portfolio'
+      },
+      {
+        name: 'blog',
+        path: '/blog'
+      }
+    ],
     languages: ['en', 'pl'],
   },
   plugins: [

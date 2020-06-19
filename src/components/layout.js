@@ -17,8 +17,10 @@ const Layout = ({ location, lang, children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
-          menuItems
+          menuItems {
+            name
+            path
+          }
           languages
         }
       }
@@ -27,7 +29,7 @@ const Layout = ({ location, lang, children }) => {
 
   return (
     <>
-      <Header location={location} lang={lang} siteTitle={data.site.siteMetadata.title} menuItems={data.site.siteMetadata.menuItems} languages={data.site.siteMetadata.languages} />
+      <Header location={location} lang={lang} menuItems={data.site.siteMetadata.menuItems} languages={data.site.siteMetadata.languages} />
       <div
         style={{
           margin: `0 auto`,
