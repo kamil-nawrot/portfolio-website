@@ -1,4 +1,17 @@
+@import '_variables.scss';
+
 .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 100px;
     background: white;
+
+    &__logo {
+        display: inline-block;
+
+        &--accent {
+            color: $color-theme;
+        }
+    }
 }

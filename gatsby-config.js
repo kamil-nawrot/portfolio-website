@@ -4,6 +4,8 @@ module.exports = {
     title: `KamilNawrot`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    menuItems: ['start', 'projects', 'blog'],
+    languages: ['en', 'pl'],
   },
   plugins: [
     {
@@ -18,6 +20,15 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+        useLangKeyLayout: false,
       },
     },
     {
