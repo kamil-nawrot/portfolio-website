@@ -49,7 +49,15 @@ const Layout = ({ location, lang, children }) => {
 }
 
 Layout.propTypes = {
+  location: PropTypes.object,
+  lang: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }
+
+Layout.defaultProps = {
+  location: { pathname: "/" },
+  lang: "en",
+}
+
 
 export default Layout
