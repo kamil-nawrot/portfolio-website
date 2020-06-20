@@ -1,0 +1,12 @@
+.hero-image {
+    width: calc(100vw - (100vw - 100%));
+    max-width: 1920px;
+    max-height: calc(100vh - 100px);
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+
+    &__image {
+        object-fit: cover;
+    }
+}
