@@ -11,7 +11,6 @@ const Header = ({ location, lang, menuItems, languages }) => (
   <header className="main-header">
     <h1 className="main-header__logo">
       <Link to={lang === "en" ? "/" : "/pl"}>
-        {console.log(location)}
         <span className="main-header__logo--accent">Kamil</span>Nawrot
       </Link>
     </h1>
@@ -32,7 +31,6 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  location: { pathname: "/" },
   lang: "en",
   menuItems: [],
   languages: [],

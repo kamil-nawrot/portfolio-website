@@ -55,7 +55,6 @@ Layout.propTypes = {
 }
 
 Layout.defaultProps = {
-  location: { pathname: "/" },
   lang: "en",
 }
 

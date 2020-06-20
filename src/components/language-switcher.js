@@ -5,7 +5,8 @@ import React from "react"
 import "../styles/language-switcher.scss"
 
 const LanguageSwitcher = ({ location, lang, languages }) => {
-  const isDefault = location.pathname.includes("en")
+  const isDefault = !location.pathname.includes("/pl")
+  console.log(location);
   return (
     <ul className="main-menu__items language-switcher">
       <li
@@ -16,7 +17,7 @@ const LanguageSwitcher = ({ location, lang, languages }) => {
         {isDefault ? (
           "EN"
         ) : (
-          <Link to={location.pathname.replace("/pl", "/")}>EN</Link>
+          <Link to={location.pathname.replace("/pl", "")}>EN</Link>
         )}
       </li>
       <span className="language-switcher__divider">|</span>
@@ -25,7 +26,8 @@ const LanguageSwitcher = ({ location, lang, languages }) => {
           isDefault ? "" : "--active"
         }`}
       >
-        {isDefault ? <Link to={`pl/${location.pathname}`}>PL</Link> : "PL"}
+        {console.log(location)}
+        {isDefault ? <Link to={`pl${location.pathname}`}>PL</Link> : "PL"}
       </li>
     </ul>
   )
@@ -38,7 +40,6 @@ LanguageSwitcher.propTypes = {
 }
 
 LanguageSwitcher.defaultProps = {
-  location: { pathname: "/" },
   lang: "en",
   languages: ["en", "pl"],
 }
