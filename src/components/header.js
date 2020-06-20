@@ -2,41 +2,38 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+import Menu from "../components/menu"
+
+import "../styles/header.scss"
+import "../styles/_variables.scss"
+
+const Header = ({ location, lang, menuItems, languages }) => (
+  <header className="main-header">
+    <h1 className="main-header__logo">
+      <Link to={lang === "en" ? "/" : "/pl"}>
+        <span className="main-header__logo--accent">Kamil</span>Nawrot
+      </Link>
+    </h1>
+    <Menu
+      location={location}
+      lang={lang}
+      menuItems={menuItems}
+      languages={languages}
+    />
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  location: PropTypes.object,
+  lang: PropTypes.string.isRequired,
+  menuItems: PropTypes.arrayOf(PropTypes.object),
+  languages: PropTypes.arrayOf(PropTypes.string),
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  lang: "en",
+  menuItems: [],
+  languages: [],
 }
 
 export default Header

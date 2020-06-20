@@ -1,17 +1,53 @@
 module.exports = {
   pathPrefix: '/portfolio-website',
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `KamilNawrot`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    menuItems: [
+      {
+        name: 'start',
+        path: '/',
+      },
+      {
+        name: 'portfolio',
+        path: '/portfolio'
+      },
+      {
+        name: 'blog',
+        path: '/blog'
+      }
+    ],
+    languages: ['en', 'pl'],
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: ["src/styles"],
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+        useLangKeyLayout: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     `gatsby-transformer-sharp`,

@@ -1,0 +1,18 @@
+@import '_variables.scss';
+
+.language-switcher {
+    list-style-type: none;
+    color: $color-theme;
+
+    &__language {
+        display: inline-block;
+
+        &--active {
+            font-weight: 700;
+        }
+    }
+
+    &__divider {
+        padding: 0 16px;
+    }
+}
