@@ -1,0 +1,1 @@
+{"errors":[{"message":"Expected Iterable, but did not find one for field SiteSiteMetadata.menuItems.","locations":[{"line":4,"column":7}],"path":["site","siteMetadata","menuItems"]}],"data":{"site":{"siteMetadata":{"menuItems":null,"languages":["en","pl"]}}}}
