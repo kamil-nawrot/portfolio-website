@@ -1,0 +1,54 @@
+@import '_variables.scss';
+
+.section {
+    width: calc(100% - 160px);
+    margin: 80px;
+
+    &__headline {
+        margin-bottom: 80px;
+        text-align: center; 
+    }
+}
+
+.about-section {
+    .perk {
+        display: flex;
+        width: 50%;
+        margin: 24px 0;
+
+        &__icon-wrapper {
+            display: inline-block;
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            margin-right: 24px;
+            background: $color-theme;
+            border-radius: 50%;
+            text-align: center;
+
+            svg {
+                width: 40px;
+                height: 40px;
+                margin-top: calc(0.5 * (80px - 40px));
+                color: $color-white;
+            }
+        }
+
+        &__content {
+            display: inline-block;
+        }
+
+        &__title {
+            display: inline-block;
+            margin-bottom: 0;
+            font-size: 24px;
+            font-weight: 300;
+            color: $color-theme;
+            text-transform: uppercase;
+        }
+
+        &__description {
+            margin-bottom: 0;
+        }
+    }
+}
