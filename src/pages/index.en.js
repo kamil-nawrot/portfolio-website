@@ -1,10 +1,11 @@
 import React from "react"
 import { useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+import { MdExpandMore } from 'react-icons/md'
 
 import "../styles/layout.scss"
 
@@ -28,16 +29,17 @@ const HeroImage = () => {
       fluid={data.heroImage.childImageSharp.fluid}
     >
       <div className="hero-image__content">
-        <div class="hero-image__content__element-wrapper">
+        <div className="hero-image__content__element-wrapper hero-image__content__element-wrapper--upper">
           <h1 className="hero-image__content__element hero-image__content__headline">
             Lorem ipsum dolor sit amet
           </h1>
         </div>
-        <div class="hero-image__content__element-wrapper">
+        <div className="hero-image__content__element-wrapper hero-image__content__element-wrapper--middle">
           <button className="hero-image__content__element hero-image__content__button">
             Quesi varites semiratiu
           </button>
         </div>
+        <div className="hero-image__content__element-wrapper hero-image__content__element-wrapper--bottom">
         <p className="hero-image__content__paragraph">
           Eu et eu veniam eu velit incididunt minim culpa incididunt ad id quis
           consequat amet. Lorem consectetur consequat mollit quis do eiusmod
@@ -48,7 +50,11 @@ const HeroImage = () => {
           mollit sint. Veniam ea ullamco deserunt id in aute laborum labore anim
           culpa nulla.
         </p>
+        </div>
       </div>
+      <aside className="hero-image__scroll">
+        <MdExpandMore className="hero-image__scroll__icon" />
+      </aside>
     </BackgroundImage>
   )
 }

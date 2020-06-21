@@ -6,7 +6,6 @@ import "../styles/language-switcher.scss"
 
 const LanguageSwitcher = ({ location, lang, languages }) => {
   const isDefault = !location.pathname.includes("/pl")
-  console.log(location);
   return (
     <ul className="main-menu__items language-switcher">
       <li
@@ -26,7 +25,6 @@ const LanguageSwitcher = ({ location, lang, languages }) => {
           isDefault ? "" : "--active"
         }`}
       >
-        {console.log(location)}
         {isDefault ? <Link to={`pl${location.pathname}`}>PL</Link> : "PL"}
       </li>
     </ul>
