@@ -1,12 +1,30 @@
+@import '_variables.scss';
+
 .hero-image {
     width: calc(100vw - (100vw - 100%));
     max-width: 1920px;
-    max-height: calc(100vh - 100px);
-    position: absolute;
+    height: calc(100vh - 100px);
+    position: absolute !important;
     left: 0;
     overflow: hidden;
 
-    &__image {
-        object-fit: cover;
+    &__content {
+        width: 800px;
+        margin: 0 80px;
+        margin-top: 20%;
+
+        &__headline {
+            background-color: $color-white;
+        }
+
+        &__button {
+            background-color: $color-theme;
+            border: none;
+        }
+
+        &__paragraph {
+            color: $color-white;
+            font-weight: 300;
+        }
     }
 }

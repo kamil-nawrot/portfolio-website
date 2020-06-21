@@ -9,7 +9,11 @@ const typography = new Typography({
   ],
   
   headerWeight: "200",
-  bodyFontFamily: ["Josefin Sans", "sans-serif"],
+  bodyFontFamily: [
+    "Josefin Sans", 
+    "sans-serif"
+  ],
+  bodyWeight: "300",
   googleFonts: [
     {
       name: 'Josefin Sans',
