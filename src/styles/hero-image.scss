@@ -1,0 +1,82 @@
+@import '_variables.scss';
+
+.hero-image {
+    width: calc(100vw - (100vw - 100%));
+    max-width: 1920px;
+    height: calc(100vh - 100px);
+    position: absolute !important;
+    left: 0;
+    overflow: hidden;
+
+    &__content {
+        position: relative;
+        max-width: 800px;
+        margin-left: calc(80px + 8px);
+        margin-top: 20%;
+        
+        &__element {
+            display: inline;
+        }
+
+        @keyframes slide-in {
+            from { left: -1000px; opacity: 0.2; }
+            to { left: 0;  opacity: 1; }
+        }
+
+        &__element-wrapper {
+            display: block;
+            margin: 24px 0;
+            position: relative;
+            left: -1000px;
+            opacity: 0.2;
+            animation-name: slide-in;
+            animation-timing-function: ease-out;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            
+            &--upper {
+                animation-delay: 0;
+            }
+
+            &--middle {
+                animation-delay: 0.2s;
+            }
+
+            &--bottom {
+                animation-delay: 0.5s;
+            }
+        }
+
+        &__headline {
+            background-color: $color-white;
+            box-shadow:  0px 0px 0px 8px $color-white;
+        }
+
+
+        &__button {
+            cursor: pointer;
+            border: none;
+            background-color: $color-theme;
+            box-shadow:  0px 0px 0px 8px $color-theme;
+            font-size: 20px;
+            color: $color-white;
+            text-transform: uppercase;
+        }
+
+        &__paragraph {
+            margin-left: -8px;
+            color: $color-white;
+            font-weight: 300;
+        }
+    }
+
+    &__scroll {
+        position: absolute;
+        bottom: 24px;
+        width: 100vw;
+        text-align: center;
+        font-size: 120px;
+        color: $color-white;
+        opacity: .3;
+    }
+}

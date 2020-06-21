@@ -27,6 +27,14 @@ module.exports = {
         includePaths: ["src/styles"],
       }
     },
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+          threshold: 1,
+          once: true,
+          disable: false,
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
