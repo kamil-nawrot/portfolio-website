@@ -9,20 +9,37 @@
     overflow: hidden;
 
     &__content {
-        width: 800px;
-        margin: 0 80px;
+        max-width: 800px;
+        margin-left: calc(80px + 8px);
         margin-top: 20%;
+        
+        &__element {
+            display: inline;
+        }
+
+        &__element-wrapper {
+            display: block;
+            margin: 24px 0;
+        }
 
         &__headline {
             background-color: $color-white;
+            box-shadow:  0px 0px 0px 8px $color-white;
         }
 
+
         &__button {
-            background-color: $color-theme;
+            cursor: pointer;
             border: none;
+            background-color: $color-theme;
+            box-shadow:  0px 0px 0px 8px $color-theme;
+            font-size: 20px;
+            color: $color-white;
+            text-transform: uppercase;
         }
 
         &__paragraph {
+            margin-left: -8px;
             color: $color-white;
             font-weight: 300;
         }
