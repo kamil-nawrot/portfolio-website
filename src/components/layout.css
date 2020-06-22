@@ -114,6 +114,9 @@ textarea {
   font: inherit;
   margin: 0;
 }
+button {
+  border: none;
+}
 optgroup {
   font-weight: 700;
 }

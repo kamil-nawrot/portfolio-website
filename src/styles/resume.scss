@@ -1,0 +1,32 @@
+@import "_variables";
+
+.resume {
+  display: table-cell;
+  vertical-align: middle;
+  width: 40%;
+  margin: 24px 0 24px auto;
+  padding: 40px 80px;
+  text-align: center;
+
+  &__text {
+    font-weight: 400;
+    color: $color-white;
+  }
+
+  &__button {
+    margin: 20px auto;
+    padding: 8px 16px;
+    background: $color-white;
+    font-weight: 400;
+  }
+
+  &__social-icons {
+    color: $color-white;
+
+    &__icon {
+      width: 32px;
+      height: 32px;
+      margin: 16px;
+    }
+  }
+}
