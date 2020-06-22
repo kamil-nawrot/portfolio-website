@@ -27,13 +27,13 @@ Header.propTypes = {
   location: PropTypes.object,
   lang: PropTypes.string.isRequired,
   menuItems: PropTypes.arrayOf(PropTypes.object),
-  languages: PropTypes.arrayOf(PropTypes.string),
+  languages: PropTypes.arrayOf(PropTypes.string)
 }
 
 Header.defaultProps = {
   lang: "en",
   menuItems: [],
-  languages: [],
+  languages: []
 }
 
 export default Header

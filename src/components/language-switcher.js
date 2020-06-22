@@ -34,12 +34,12 @@ const LanguageSwitcher = ({ location, lang, languages }) => {
 LanguageSwitcher.propTypes = {
   location: PropTypes.object,
   lang: PropTypes.string.isRequired,
-  languages: PropTypes.arrayOf(PropTypes.string),
+  languages: PropTypes.arrayOf(PropTypes.string)
 }
 
 LanguageSwitcher.defaultProps = {
   lang: "en",
-  languages: ["en", "pl"],
+  languages: ["en", "pl"]
 }
 
 export default LanguageSwitcher
