@@ -1,8 +1,8 @@
 @import '_variables.scss';
 
 .section {
-    width: calc(100% - 160px);
-    margin: 80px;
+    width: calc(100% - 320px);
+    margin: 80px 160px;
 
     &__headline {
         margin-bottom: 80px;
@@ -11,9 +11,19 @@
 }
 
 .about-section {
+    &__content {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__perks {
+        display: inline-block;
+        width: 50%;
+    }
+
     .perk {
         display: flex;
-        width: 50%;
+        width: 100%;
         margin: 24px 0;
 
         &__icon-wrapper {
@@ -50,5 +60,15 @@
         &__description {
             margin-bottom: 0;
         }
+    }
+
+    &__resume {
+        display: inline-block;
+        width: 40%; 
+        margin-top: 24px;
+        margin-bottom: 24px;
+        margin-left: auto;
+        margin-right: 0;
+        border: 1px solid green;
     }
 }
