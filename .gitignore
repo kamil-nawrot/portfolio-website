@@ -71,3 +71,7 @@ yarn-error.log
 # Prettier
 .prettierignore
 .prettierrc
+
+# WebStorm
+*.xml
+*.iml
