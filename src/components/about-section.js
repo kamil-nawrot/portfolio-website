@@ -28,7 +28,7 @@ const perks = [
 
 const AboutSection = () => (
   <section className="section about-section">
-    <h1 className="section__headline" data-sal="slide-up"
+    <h1 className="section__headline" data-sal="slide-up" 
         data-sal-duration="3000"
         data-sal-delay="300"
         data-sal-easing="ease">
