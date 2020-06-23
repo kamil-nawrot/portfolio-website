@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../styles/section.scss"
 import "../styles/resume.scss"
