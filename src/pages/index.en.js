@@ -13,6 +13,5 @@ const IndexPage = ({ location }) => (
     <AboutSection/>
     <ProjectsSection/>
   </Layout>
-)
 
 export default IndexPage

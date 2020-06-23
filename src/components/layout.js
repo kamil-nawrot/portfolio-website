@@ -29,8 +29,7 @@ const Layout = ({ location, lang, children }) => {
 
   return (
     <>
-      <Header location={location} lang={lang} menuItems={data.site.siteMetadata.menuItems}
-              languages={data.site.siteMetadata.languages}/>
+      <Header location={location} lang={lang} menuItems={data.site.siteMetadata.menuItems} languages={data.site.siteMetadata.languages} />
       <div>
         <main>{children}</main>
         <footer>
