@@ -1,18 +1,18 @@
 @import '_variables.scss';
 
 .language-switcher {
-    list-style-type: none;
-    color: $color-theme;
+  list-style-type: none;
+  color: $color-theme;
 
-    &__language {
-        display: inline-block;
+  &__language {
+    display: inline-block;
 
-        &--active {
-            font-weight: 700;
-        }
+    &--active {
+      font-weight: 700;
     }
+  }
 
-    &__divider {
-        padding: 0 16px;
-    }
+  &__divider {
+    padding: 0 16px;
+  }
 }

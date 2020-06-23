@@ -5,21 +5,21 @@ const typography = new Typography({
   baseLineHeight: 1.666,
   headerFontFamily: [
     "Josefin Sans",
-    "sans-serif",
+    "sans-serif"
   ],
-  
+
   headerWeight: "200",
   bodyFontFamily: [
-    "Josefin Sans", 
+    "Josefin Sans",
     "sans-serif"
   ],
   bodyWeight: "300",
   googleFonts: [
     {
-      name: 'Josefin Sans',
+      name: "Josefin Sans",
       styles: [
-        '100', '200', '400', '700'
-      ],
+        "100", "200", "400", "700"
+      ]
     }
   ]
 })

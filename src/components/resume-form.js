@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
 
