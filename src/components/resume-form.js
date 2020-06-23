@@ -1,5 +1,9 @@
 import React from "react"
+<<<<<<< HEAD
 import { useStaticQuery, graphql } from "gatsby"
+=======
+import { graphql, useStaticQuery } from "gatsby"
+>>>>>>> fdeaac5dab8bf8ed3cf021e09bcbc875d83b8067
 import BackgroundImage from "gatsby-background-image"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
 

@@ -15,19 +15,19 @@ const Menu = ({ location, lang, menuItems, languages }) => {
           </li>
         ))}
       </ul>
-      <LanguageSwitcher location={location} lang={lang} languages={languages} />
+      <LanguageSwitcher location={location} lang={lang} languages={languages}/>
     </nav>
   )
 }
 
 Menu.propTypes = {
   menuItems: PropTypes.arrayOf(PropTypes.object),
-  languages: PropTypes.arrayOf(PropTypes.string),
+  languages: PropTypes.arrayOf(PropTypes.string)
 }
 
 Menu.defaultProps = {
   menuItems: [],
-  languages: [],
+  languages: []
 }
 
 export default Menu

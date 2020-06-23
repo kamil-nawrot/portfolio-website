@@ -28,9 +28,16 @@ const perks = [
 
 const AboutSection = () => (
   <section className="section about-section">
+<<<<<<< HEAD
     <h1 className="section__headline" data-sal="slide-up" data-sal-duration="3000"
     data-sal-delay="300"
     data-sal-easing="ease">
+=======
+    <h1 className="section__headline" data-sal="slide-up" 
+        data-sal-duration="3000"
+        data-sal-delay="300"
+        data-sal-easing="ease">
+>>>>>>> fdeaac5dab8bf8ed3cf021e09bcbc875d83b8067
       Quis et laboris id sit excepteur quis sit
     </h1>
     <div className="about-section__content">
