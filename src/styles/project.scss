@@ -38,12 +38,14 @@
       border-top: 1px solid $color-white;
       font-weight: 200;
       text-transform: uppercase;
+      user-select: none;
     }
 
     &__description {
       width: 60%;
       margin: 0 auto;
       font-weight: 100;
+      user-select: none;
     }
 
     &__navigation {
@@ -53,6 +55,7 @@
       opacity: 0.4;
 
       &__arrow {
+        cursor: pointer;
         width: 100px;
         height: 100px;
       }
