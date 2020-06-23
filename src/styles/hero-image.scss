@@ -1,21 +1,12 @@
 @import '_variables.scss';
 
 .hero-image {
-<<<<<<< HEAD
-    width: calc(100vw - (100vw - 100%));
-    max-width: 1920px;
-    height: calc(100vh - 100px);
-    position: relative !important;
-    left: 0;
-    overflow: hidden;
-=======
   width: calc(100vw - (100vw - 100%));
   max-width: 1920px;
   height: calc(100vh - 100px);
   position: relative !important;
   left: 0;
   overflow: hidden;
->>>>>>> fdeaac5dab8bf8ed3cf021e09bcbc875d83b8067
 
   &__content {
     position: relative;
@@ -49,10 +40,6 @@
       animation-duration: 3s;
       animation-fill-mode: forwards;
 
-      &--upper {
-        animation-delay: 0;
-      }
-
       &--middle {
         animation-delay: 0.2s;
       }
@@ -64,7 +51,7 @@
 
     &__headline {
       background-color: $color-white;
-      box-shadow: 0px 0px 0px 8px $color-white;
+      box-shadow: 0 0 0 8px $color-white;
     }
 
 
@@ -72,27 +59,16 @@
       cursor: pointer;
       border: none;
       background-color: $color-theme;
-      box-shadow: 0px 0px 0px 8px $color-theme;
+      box-shadow: 0 0 0 8px $color-theme;
       font-size: 20px;
       color: $color-white;
       text-transform: uppercase;
     }
 
-<<<<<<< HEAD
-    &__scroll {
-        position: absolute;
-        bottom: 24px;
-        width: 100%;
-        text-align: center;
-        font-size: 120px;
-        color: $color-white;
-        opacity: .3;
-=======
     &__paragraph {
       margin-left: -8px;
       color: $color-white;
       font-weight: 300;
->>>>>>> fdeaac5dab8bf8ed3cf021e09bcbc875d83b8067
     }
   }
 
