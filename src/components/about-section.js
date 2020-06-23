@@ -34,6 +34,9 @@ const AboutSection = () => (
         data-sal-easing="ease">
       Quis et laboris id sit excepteur quis sit
     </h1>
+    <p className="section__text">
+      Est bi-color accola, cesaris. Cur amor experimentum? Est azureus valebat, cesaris. Pol, a bene solem, abactor! Sunt historiaes talem secundus, camerarius buboes. Byssus de velox parma, reperire visus!
+    </p>
     <div className="about-section__content">
       <section className="about-section__perks">
         {perks.map(perk => {

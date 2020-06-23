@@ -1,0 +1,68 @@
+@import "_variables.scss";
+
+.contact-form {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+
+  &__section {
+    width: 50%;
+    padding: 20px 40px 24px 40px;
+    background-color: rgba($color-white, 0);
+
+    &--secondary {
+      background-color: rgba($color-white, .85);
+    }
+
+    &__headline {
+      margin-top: 20px;
+      color: $color-theme;
+    }
+
+    &__social-icons {
+      color: $color-theme;
+      text-align: center;
+
+      &__icon {
+        width: 48px;
+        height: 48px;
+        margin: 16px;
+      }
+    }
+  }
+
+  &__form {
+    width: 90%;
+    margin: 20px auto;
+
+    &__label {
+      display: inline-block;
+      margin: 4px 0;
+      padding: 0 8px;
+      background-color: $color-theme;
+      color: $color-white;
+    }
+
+    &__input, &__textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    &__textarea {
+      resize: none;
+    }
+
+    &__button {
+      width: 100%;
+      margin-top: 32px;
+      padding: 8px 0;
+      border: none;
+      background-color: $color-white;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+}
