@@ -4,6 +4,7 @@ import { FiTarget } from "react-icons/fi"
 
 import "../styles/section.scss"
 import ResumeForm from "./resume-form"
+import Technologies from './technologies'
 
 const perks = [
   {
@@ -28,6 +29,7 @@ const perks = [
 
 const AboutSection = () => (
   <section className="section about-section">
+    <div>
     <h1 className="section__headline" data-sal="slide-up" 
         data-sal-duration="3000"
         data-sal-delay="300"
@@ -37,6 +39,7 @@ const AboutSection = () => (
     <p className="section__text">
       Est bi-color accola, cesaris. Cur amor experimentum? Est azureus valebat, cesaris. Pol, a bene solem, abactor! Sunt historiaes talem secundus, camerarius buboes. Byssus de velox parma, reperire visus!
     </p>
+    </div>
     <div className="about-section__content">
       <section className="about-section__perks">
         {perks.map(perk => {
@@ -53,6 +56,7 @@ const AboutSection = () => (
       </section>
       <ResumeForm />
     </div>
+    <Technologies />
   </section>
 )
 
