@@ -1,0 +1,10 @@
+.technologies {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto 80px auto;
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+  }
+}

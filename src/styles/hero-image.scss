@@ -40,10 +40,6 @@
       animation-duration: 3s;
       animation-fill-mode: forwards;
 
-      &--upper {
-        animation-delay: 0;
-      }
-
       &--middle {
         animation-delay: 0.2s;
       }
@@ -55,7 +51,7 @@
 
     &__headline {
       background-color: $color-white;
-      box-shadow: 0px 0px 0px 8px $color-white;
+      box-shadow: 0 0 0 8px $color-white;
     }
 
 
@@ -63,7 +59,7 @@
       cursor: pointer;
       border: none;
       background-color: $color-theme;
-      box-shadow: 0px 0px 0px 8px $color-theme;
+      box-shadow: 0 0 0 8px $color-theme;
       font-size: 20px;
       color: $color-white;
       text-transform: uppercase;
