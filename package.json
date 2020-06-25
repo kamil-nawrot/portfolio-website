@@ -27,10 +27,8 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-scroll": "^1.7.16",
-    "react-scroll-into-view": "^1.8.2",
     "react-scroll-wheel-handler": "^1.1.3",
     "react-typography": "^0.16.19",
-    "throttle-debounce": "^2.2.1",
     "typography": "^0.16.19"
   },
   "devDependencies": {

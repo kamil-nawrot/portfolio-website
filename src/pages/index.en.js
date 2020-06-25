@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 import * as Scroll from 'react-scroll'
-import { debounce, throttle } from 'throttle-debounce'
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
 
 import Layout from "../components/layout"
@@ -20,7 +19,6 @@ const IndexPage = ({ location }) => {
   const [currentSection, setCurrentSection] = useState(0)
 
   const handleScrollUp = () => {
-    console.log(currentSection)
     if (currentSection > 0) {
       scroller.scrollTo(sections[currentSection - 1], {
         offset: -100
@@ -30,8 +28,7 @@ const IndexPage = ({ location }) => {
   }
 
   const handleScrollDown = () => {
-    console.log(currentSection)
-    if (currentSection < sections.length - 1) {
+    if (currentSection < (sections.length - 1)) {
       scroller.scrollTo(sections[currentSection + 1], {
         offset: -100
       })

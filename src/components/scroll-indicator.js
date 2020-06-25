@@ -3,7 +3,6 @@ import React, { useEffect } from "react"
 import '../styles/scroll-indicator.scss'
 
 const ScrollIndicator = (props) => {
-  console.log(props.active)
   return (
     <div className="scroll-indicator">
       {props.sections.map((section, index) => {
