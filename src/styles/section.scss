@@ -1,12 +1,17 @@
 @import '_variables.scss';
 
 .section {
-  width: calc(100% - 320px);
-  max-height: 100vh;
-  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% - 620px);
+  min-width: 1300px;
+  height: 100vh;
+  margin: 0 auto;
 
   &__headline {
-    margin-bottom: 80px;
+    margin-top: 50px;
+    margin-bottom: 30px;
     text-align: center;
   }
 
@@ -20,7 +25,6 @@
 }
 
 .about-section {
-  margin: 80px 160px;
 
   &__content {
     display: flex;
@@ -75,7 +79,9 @@
 }
 
 .projects-section {
-  width: calc(100vw - (100vw - 100%));
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .contact-section {

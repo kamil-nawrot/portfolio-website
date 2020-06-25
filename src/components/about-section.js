@@ -1,6 +1,8 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import { FaGraduationCap, FaStar } from "react-icons/fa"
 import { FiTarget } from "react-icons/fi"
+
+import * as Scroll from 'react-scroll'
 
 import "../styles/section.scss"
 import ResumeForm from "./resume-form"
@@ -27,18 +29,17 @@ const perks = [
   },
 ]
 
-const AboutSection = () => (
-  <section className="section about-section">
+const AboutSection = forwardRef((props, ref) => {
+
+  var ScrollHandler = Scroll.Element
+
+  return (
+  <section id="about" className="section about-section">
+    <ScrollHandler name="about-section" />
     <div>
-    <h1 className="section__headline" data-sal="slide-up" 
-        data-sal-duration="3000"
-        data-sal-delay="300"
-        data-sal-easing="ease">
+    <h1 className="section__headline">
       Quis et laboris id sit excepteur quis sit
     </h1>
-    <p className="section__text">
-      Est bi-color accola, cesaris. Cur amor experimentum? Est azureus valebat, cesaris. Pol, a bene solem, abactor! Sunt historiaes talem secundus, camerarius buboes. Byssus de velox parma, reperire visus!
-    </p>
     </div>
     <div className="about-section__content">
       <section className="about-section__perks">
@@ -58,6 +59,7 @@ const AboutSection = () => (
     </div>
     <Technologies />
   </section>
-)
+  )
+})
 
 export default AboutSection
