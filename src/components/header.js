@@ -9,6 +9,7 @@ import "../styles/_variables.scss"
 
 const Header = ({ location, lang, menuItems, languages }) => (
   <header className="main-header">
+    <div className="main-header__content">
     <h1 className="main-header__logo">
       <Link to={lang === "en" ? "/" : "/pl"}>
         <span className="main-header__logo--accent">Kamil</span>Nawrot
@@ -20,6 +21,7 @@ const Header = ({ location, lang, menuItems, languages }) => (
       menuItems={menuItems}
       languages={languages}
     />
+    </div>
   </header>
 )
 

@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react"
+import React from "react"
 import { FaGraduationCap, FaStar } from "react-icons/fa"
 import { FiTarget } from "react-icons/fi"
 
@@ -29,7 +29,7 @@ const perks = [
   },
 ]
 
-const AboutSection = forwardRef((props, ref) => {
+const AboutSection = (props, ref) => {
 
   var ScrollHandler = Scroll.Element
 
@@ -63,6 +63,6 @@ const AboutSection = forwardRef((props, ref) => {
     <Technologies />
   </section>
   )
-})
+}
 
 export default AboutSection

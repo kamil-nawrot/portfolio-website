@@ -2,7 +2,6 @@
 
 .hero-image {
   width: 100vw;
-  max-width: 1920px;
   height: 100vh;
   position: relative !important;
   left: 0;
@@ -10,9 +9,9 @@
 
   &__content {
     position: relative;
-    max-width: 800px;
-    margin-left: calc(310px + 8px);
-    margin-top: 20%;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 50vh;
 
     &__element {
       display: inline;
@@ -31,6 +30,7 @@
 
     &__element-wrapper {
       display: block;
+      width: 60%;
       margin: 24px 0;
       position: relative;
       left: -1000px;
