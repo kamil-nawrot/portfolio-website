@@ -1,0 +1,21 @@
+@import "_variables";
+
+.scroll-indicator {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  z-index: 1000;
+
+  &__dot {
+    width: 4px;
+    height: 48px;
+    margin: 8px auto;
+    background: lightgray;
+
+    &--active {
+      background: $color-theme;
+    }
+  }
+}
