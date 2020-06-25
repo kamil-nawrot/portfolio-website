@@ -37,10 +37,7 @@ const AboutSection = forwardRef((props, ref) => {
   <section id="about" className="section about-section">
     <ScrollHandler name="about-section" />
     <div>
-    <h1 className="section__headline" data-sal="slide-up" 
-        data-sal-duration="3000"
-        data-sal-delay="300"
-        data-sal-easing="ease">
+    <h1 className="section__headline">
       Quis et laboris id sit excepteur quis sit
     </h1>
     </div>
