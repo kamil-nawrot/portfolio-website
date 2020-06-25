@@ -1,9 +1,9 @@
 @import '_variables.scss';
 
 .hero-image {
-  width: calc(100vw - (100vw - 100%));
+  width: 100vw;
   max-width: 1920px;
-  height: calc(100vh - 100px);
+  height: 100vh;
   position: relative !important;
   left: 0;
   overflow: hidden;
@@ -11,7 +11,7 @@
   &__content {
     position: relative;
     max-width: 800px;
-    margin-left: calc(80px + 8px);
+    margin-left: calc(310px + 8px);
     margin-top: 20%;
 
     &__element {

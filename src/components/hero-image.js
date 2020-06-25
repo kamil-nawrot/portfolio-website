@@ -1,11 +1,14 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import { useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+
+import * as Scroll from 'react-scroll'
 
 import { MdExpandMore } from "react-icons/md"
 import "../styles/hero-image.scss"
 
-const HeroImage = () => {
+
+const HeroImage = forwardRef((props, ref) => {
   const data = useStaticQuery(graphql`
       query {
           heroImage: file(relativePath: { eq: "hero-image.jpg" }) {
@@ -18,12 +21,15 @@ const HeroImage = () => {
       }
   `)
 
+  var ScrollHandler = Scroll.Element;
+
   return (
     <BackgroundImage
       Tag="section"
       className="hero-image"
       fluid={data.heroImage.childImageSharp.fluid}
     >
+      <ScrollHandler name="hero-image-section" />
       <div className="hero-image__content">
         <div className="hero-image__content__element-wrapper hero-image__content__element-wrapper--upper">
           <h1 className="hero-image__content__element hero-image__content__headline">
@@ -53,6 +59,6 @@ const HeroImage = () => {
       </aside>
     </BackgroundImage>
   )
-}
+})
 
 export default HeroImage
