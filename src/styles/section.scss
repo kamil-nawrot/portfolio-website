@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   width: calc(100% - 620px);
+  max-width: 1920px;
   min-width: 1300px;
   height: 100vh;
   margin: 0 auto;
@@ -20,7 +21,6 @@
     width: 50%;
     min-width: 300px;
     margin: 20px auto;
-    margin-top: -70px;
   }
 }
 
@@ -82,7 +82,4 @@
   width: 100vw;
   margin-left: 0;
   margin-right: 0;
-}
-
-.contact-section {
 }

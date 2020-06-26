@@ -144,9 +144,11 @@ textarea {
 
 button {
   border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
->>>>>>> fdeaac5dab8bf8ed3cf021e09bcbc875d83b8067
 optgroup {
     font-weight: 700;
 }
@@ -156,7 +158,6 @@ input {
     overflow: visible;
 }
 
-button,
 select {
     text-transform: none;
 }
