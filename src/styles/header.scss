@@ -3,16 +3,20 @@
 .main-header {
   position: fixed;
   top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  z-index: 1;
   width: 100vw;
   height: 100px;
   margin: 0;
-  padding: 0 310px;
   background: $color-white;
-  font-family: 'Josefin Sans';
+  font-family: 'Josefin Sans', 'sans-serif';
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
 
   &__logo {
     display: inline-block;
