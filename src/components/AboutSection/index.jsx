@@ -4,9 +4,10 @@ import { FiTarget } from "react-icons/fi"
 
 import * as Scroll from 'react-scroll'
 
-import "../styles/section.scss"
-import ResumeForm from "./resume-form"
-import Technologies from './technologies'
+import "../../styles/section.scss"
+import "./about-section.scss"
+import ResumeForm from "../ResumeForm"
+import Technologies from '../Technologies'
 
 const perks = [
   {
@@ -29,9 +30,9 @@ const perks = [
   },
 ]
 
-const AboutSection = forwardRef((props, ref) => {
+const AboutSection = () => {
 
-  var ScrollHandler = Scroll.Element
+  let ScrollHandler = Scroll.Element
 
   return (
   <section id="about" className="section about-section">
@@ -60,6 +61,6 @@ const AboutSection = forwardRef((props, ref) => {
     <Technologies />
   </section>
   )
-})
+}
 
 export default AboutSection

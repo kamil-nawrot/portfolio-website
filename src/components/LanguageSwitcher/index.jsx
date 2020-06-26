@@ -2,7 +2,7 @@ import { Link } from "@reach/router"
 import PropTypes from "prop-types"
 import React from "react"
 
-import "../styles/language-switcher.scss"
+import "./language-switcher.scss"
 
 const LanguageSwitcher = ({ location, lang, languages }) => {
   const isDefault = !location.pathname.includes("/pl")

@@ -1,14 +1,15 @@
-import React, { forwardRef } from "react"
-import { useStaticQuery } from "gatsby"
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import * as Scroll from 'react-scroll'
 
 import { MdExpandMore } from "react-icons/md"
-import "../styles/hero-image.scss"
+import "./hero-image.scss"
 
 
-const HeroImage = forwardRef((props, ref) => {
+const HeroImage = () => {
+
   const data = useStaticQuery(graphql`
       query {
           heroImage: file(relativePath: { eq: "hero-image.jpg" }) {
@@ -21,7 +22,7 @@ const HeroImage = forwardRef((props, ref) => {
       }
   `)
 
-  var ScrollHandler = Scroll.Element;
+  let ScrollHandler = Scroll.Element;
 
   return (
     <BackgroundImage
@@ -59,6 +60,6 @@ const HeroImage = forwardRef((props, ref) => {
       </aside>
     </BackgroundImage>
   )
-})
+}
 
 export default HeroImage

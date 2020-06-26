@@ -5,7 +5,7 @@ import Image from "gatsby-background-image"
 
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md"
 
-import '../styles/project.scss'
+import './project.scss'
 
 const Project = () => {
 

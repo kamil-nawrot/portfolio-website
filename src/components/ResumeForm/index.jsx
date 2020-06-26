@@ -3,8 +3,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
-import "../styles/section.scss"
-import "../styles/resume.scss"
+import "../../styles/section.scss"
+import "./resume-form.scss"
 
 const ResumeForm = () => {
   const data = useStaticQuery(graphql`

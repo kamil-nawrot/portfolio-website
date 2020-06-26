@@ -2,10 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import Menu from "../components/menu"
+import Menu from "../menu"
 
-import "../styles/header.scss"
-import "../styles/_variables.scss"
+import "./header.scss"
 
 const Header = ({ location, lang, menuItems, languages }) => (
   <header className="main-header">
