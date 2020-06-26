@@ -2,8 +2,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "@reach/router"
 
-import "../styles/main-menu.scss"
-import LanguageSwitcher from "./language-switcher"
+import "./menu.scss"
+import LanguageSwitcher from "../LanguageSwitcher"
 
 const Menu = ({ location, lang, menuItems, languages }) => {
   return (

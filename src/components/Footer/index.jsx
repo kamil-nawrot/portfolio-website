@@ -2,7 +2,7 @@ import React from 'react'
 
 import * as Scroll from 'react-scroll'
 
-import '../styles/footer.scss'
+import './footer.scss'
 
 const Footer = () => {
   const ScrollHandler = Scroll.Element

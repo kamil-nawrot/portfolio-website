@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 
-import '../styles/scroll-indicator.scss'
+import './scroll-indicator.scss'
 
 const ScrollIndicator = (props) => {
   return (

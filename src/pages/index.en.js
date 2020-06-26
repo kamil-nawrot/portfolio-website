@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 import * as Scroll from 'react-scroll'
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
@@ -6,11 +6,11 @@ import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import HeroImage from "../components/hero-image"
-import AboutSection from "../components/about-section"
-import ProjectsSection from "../components/projects-section"
-import ContactSection from "../components/contact-section"
-import ScrollIndicator from "../components/scroll-indicator"
+import HeroImage from "../components/HeroImage"
+import AboutSection from "../components/AboutSection"
+import ProjectsSection from "../components/ProjectsSection"
+import ContactSection from "../components/ContactSection"
+import ScrollIndicator from "../components/ScrollIndicator"
 
 const IndexPage = ({ location }) => {
 
@@ -46,8 +46,8 @@ const IndexPage = ({ location }) => {
       >
         <SEO title="Home" />
         <HeroImage name="hero-image" />
-        <AboutSection />
-        <ProjectsSection />
+        <AboutSection name="about-section" />
+        <ProjectsSection name="projects-section" />
         <ContactSection name="contact-section" />
       </ReactScrollWheelHandler>
     </Layout>

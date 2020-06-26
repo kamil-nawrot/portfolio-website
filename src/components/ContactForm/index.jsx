@@ -1,10 +1,9 @@
 import React from 'react'
 import BackgroundImage from "gatsby-background-image"
-
-import '../styles/contact-form.scss'
 import { graphql, useStaticQuery } from "gatsby"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
 
+import './contact-form.scss'
 
 const ContactForm = () => {
 

@@ -1,12 +1,14 @@
 import React from "react"
 import * as Scroll from 'react-scroll'
 
-import Project from "./project"
+import Project from "../project"
 
-import "../styles/section.scss"
+import "../../styles/section.scss"
+import "./projects-section.scss"
 
 const ProjectsSection = () => {
-  var ScrollHandler = Scroll.Element
+
+  let ScrollHandler = Scroll.Element
 
   return (
   <section id="projects" className="section projects-section">
