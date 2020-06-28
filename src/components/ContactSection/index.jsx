@@ -3,6 +3,8 @@ import * as Scroll from 'react-scroll'
 
 import ContactForm from "../ContactForm"
 
+import data from '../../data/main-page.en.json'
+
 const ContactSection = () => {
 
   let ScrollHandler = Scroll.Element
@@ -10,7 +12,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="section contact-section">
       <ScrollHandler name="contact-section"/>
-      <h1 className="section__headline">Dubloons whine from strengths like small krakens</h1>
+      <h1 className="section__headline">{data.contactSection.headline}</h1>
       <ContactForm />
     </section>
   )

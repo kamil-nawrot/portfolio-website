@@ -5,11 +5,12 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../../styles/section.scss"
 import "./resume-form.scss"
+import data from '../../data/main-page.en.json'
 
 const ResumeForm = () => {
-  const data = useStaticQuery(graphql`
+  const image = useStaticQuery(graphql`
       query {
-          resumeImage: file(relativePath: { eq: "resume-form-image.jpg" }) {
+          resumeImage: file(relativePath: { eq: "images/resume-form-image.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 960) {
                       ...GatsbyImageSharpFluid
@@ -23,14 +24,14 @@ const ResumeForm = () => {
     <BackgroundImage
       Tag="section"
       className="about-section__resume resume"
-      fluid={data.resumeImage.childImageSharp.fluid}
+      fluid={image.resumeImage.childImageSharp.fluid}
     >
-      <p className="resume__text">Mermaids resist on future at subspace! Harmless astronauts, to the homeworld. Flavor the leek with raw butterscotch, cumin, black cardamon, and thyme making sure to cover all of it.</p>
-      <button className="resume__button">DOWNLOAD RESUME</button>
+      <p className="resume__text">{data.aboutSection.resumeForm.description}</p>
+      <button className="resume__button">{data.aboutSection.resumeForm.buttonText}</button>
       <section className="resume__social-icons">
-        <FaFacebook className="resume__social-icons__icon" />
-        <FaGithub className="resume__social-icons__icon" />
-        <FaLinkedin className="resume__social-icons__icon" />
+        <a href={data.aboutSection.resumeForm.socialLinks.facebook} target="_blank"><FaFacebook className="resume__social-icons__icon" /></a>
+        <a href={data.aboutSection.resumeForm.socialLinks.github} target="_blank"><FaGithub className="resume__social-icons__icon" /></a>
+        <a href={data.aboutSection.resumeForm.socialLinks.linkedin} target="_blank"><FaLinkedin className="resume__social-icons__icon" /></a>
       </section>
     </BackgroundImage>
   )

@@ -5,6 +5,7 @@ import Project from "../project"
 
 import "../../styles/section.scss"
 import "./projects-section.scss"
+import data from '../../data/main-page.en.json'
 
 const ProjectsSection = () => {
 
@@ -13,9 +14,9 @@ const ProjectsSection = () => {
   return (
   <section id="projects" className="section projects-section">
     <ScrollHandler name="projects-section" />
-    <h1 className="section__headline">Heavens of acceptance will spiritually absorb</h1>
+    <h1 className="section__headline">{data.projectsSection.headline}</h1>
     <section className="projects-section__projects">
-      <Project/>
+      <Project />
     </section>
   </section>
   )

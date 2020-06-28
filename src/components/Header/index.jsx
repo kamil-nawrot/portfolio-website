@@ -5,24 +5,28 @@ import React from "react"
 import Menu from "../menu"
 
 import "./header.scss"
+import data from '../../data/main-page.en.json'
 
-const Header = ({ location, lang, menuItems, languages }) => (
-  <header className="main-header">
-    <div className="main-header__content">
-      <h1 className="main-header__logo">
-        <Link to={lang === "en" ? "/" : "/pl"}>
-          <span className="main-header__logo--accent">Kamil</span>Nawrot
-        </Link>
-      </h1>
-      <Menu
-        location={location}
-        lang={lang}
-        menuItems={menuItems}
-        languages={languages}
-      />
-    </div>
-  </header>
-)
+const Header = ({ location, lang, menuItems, languages }) => {
+
+  return (
+    <header className="main-header">
+      <div className="main-header__content">
+        <h1 className="main-header__logo">
+          <Link to={lang === "en" ? "/" : "/pl"}>
+            <span className="main-header__logo--accent">Kamil</span>Nawrot
+          </Link>
+        </h1>
+        <Menu
+          location={location}
+          lang={lang}
+          menuItems={data.header.menu}
+          languages={data.header.languages}
+        />
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   location: PropTypes.object,
