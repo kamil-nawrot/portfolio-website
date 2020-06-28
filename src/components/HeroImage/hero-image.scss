@@ -38,6 +38,10 @@
       animation-duration: 3s;
       animation-fill-mode: forwards;
 
+      &--upper {
+        margin-left: 8px;
+      }
+
       &--middle {
         animation-delay: 0.2s;
       }
@@ -49,7 +53,11 @@
 
     &__headline {
       background-color: $color-white;
-      box-shadow: 0 0 0 8px $color-white;
+      box-shadow:
+        16px 0 0 $color-white,
+        -16px 0 0 $color-white;
+      padding: 8px 0;
+      line-height: 70px;
     }
 
     &__button {
