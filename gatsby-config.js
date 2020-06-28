@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        includePaths: ["src/styles"],
+        includePaths: ["src"],
       }
     },
     {
@@ -39,8 +39,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `files`,
+        path: `${__dirname}/src/`,
       },
     },
     {
@@ -82,6 +82,7 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-graphql-loader`,
 // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
