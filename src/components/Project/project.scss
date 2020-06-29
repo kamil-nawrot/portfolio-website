@@ -54,3 +54,27 @@
     }
   }
 }
+
+@media (max-width: 1440px) {
+
+  .project-carousel {
+    width: calc(100vw - (100vw - 100%));
+
+    .project {
+      min-width: 900px;
+      height: 480px;
+
+      &__prev, &__next {
+        height: 360px;
+      }
+
+      &__prev {
+        left: 0;
+      }
+
+      &__next {
+        right: 0;
+      }
+    }
+  }
+}
