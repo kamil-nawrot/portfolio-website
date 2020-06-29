@@ -5,6 +5,49 @@
   height: 100px;
   line-height: 100px;
 
+  &--mobile {
+    .main-menu {
+      &__icon-wrapper {
+        width: 40px;
+        height: 40px;
+      }
+
+      &__icon {
+        line-height: 160px;
+        font-size: 35px;
+      }
+
+      &__items {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        background: $color-white;
+        text-align: center;
+        opacity: .95;
+
+        &--active {
+          display: block;
+        }
+      }
+
+      &__item {
+        display: block;
+        width: 60%;
+        margin: 4px auto;
+        padding: 8px 0;
+        border-bottom: 1px solid $color-gray;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
   &__items {
     display: inline-block;
   }
@@ -16,5 +59,11 @@
     &:hover {
       color: $color-theme;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-menu {
+    line-height: 125px;
   }
 }

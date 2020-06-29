@@ -5,7 +5,7 @@ import React from "react"
 import Menu from "../menu"
 
 import "./header.scss"
-import data from '../../data/main-page.en.json'
+import data from "../../data/main-page.en.json"
 
 const Header = ({ location, lang, menuItems, languages }) => {
 
@@ -22,6 +22,7 @@ const Header = ({ location, lang, menuItems, languages }) => {
           lang={lang}
           menuItems={data.header.menu}
           languages={data.header.languages}
+          mobile={window.innerWidth <= 1024}
         />
       </div>
     </header>
