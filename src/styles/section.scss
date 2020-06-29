@@ -23,3 +23,17 @@
     margin: 20px auto;
   }
 }
+
+@media (max-width: 1440px) {
+  .section {
+    max-width: 1440px;
+    min-width: 900px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__headline {
+      margin-top: 100px;
+    }
+  }
+}
