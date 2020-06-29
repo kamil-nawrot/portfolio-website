@@ -17,24 +17,35 @@ import dataPl from "../data/main-page.pl.json"
 const IndexPage = ({ location }) => {
 
     var scroller = Scroll.scroller
+    var scroll = Scroll.animateScroll
     const sections = ["hero-image-section", "about-section", "projects-section", "contact-section"]
     const [currentSection, setCurrentSection] = useState(0)
 
     const handleScrollUp = () => {
-        if (currentSection > 0) {
-            scroller.scrollTo(sections[currentSection - 1], {
-                offset: -100
-            })
-            setCurrentSection(currentSection - 1)
+        if (window.innerWidth > 1440) {
+            if (currentSection > 0) {
+                scroller.scrollTo(sections[currentSection - 1], {
+                    offset: -100
+                })
+                setCurrentSection(currentSection - 1)
+            }
         }
     }
 
     const handleScrollDown = () => {
-        if (currentSection < (sections.length - 1)) {
-            scroller.scrollTo(sections[currentSection + 1], {
-                offset: -100
-            })
-            setCurrentSection(currentSection + 1)
+        if (window.innerWidth > 1440) {
+            if (currentSection < (sections.length - 1)) {
+                scroller.scrollTo(sections[currentSection + 1], {
+                    offset: -100
+                })
+                setCurrentSection(currentSection + 1)
+            } else if (currentSection == (sections.length - 1)) {
+                scroll.scrollToBottom({
+                    delay: 0,
+                    duration: 50
+                })
+                setCurrentSection(currentSection + 1)
+            }
         }
     }
 

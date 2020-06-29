@@ -33,7 +33,7 @@ const Project = (props) => {
     <article className="project-carousel">
       <Image
         className="project__prev"
-        style={{ position: "absolute" }}
+        // style={{ position: "absolute" }}
         fluid={images.projectImages.edges[currentPosition[0]].node.childImageSharp.fluid}
       />
     <BackgroundImage
@@ -60,7 +60,7 @@ const Project = (props) => {
     </BackgroundImage>
       <Image
         className="project__next"
-        style={{ position: "absolute" }}
+        // style={{ position: "absolute" }}
         fluid={images.projectImages.edges[currentPosition[2]].node.childImageSharp.fluid}
       />
     </article>
