@@ -1,15 +1,14 @@
-import React, { forwardRef } from "react"
+import React from "react"
 import { FaGraduationCap, FaStar } from "react-icons/fa"
 import { FiTarget } from "react-icons/fi"
 
-import * as Scroll from 'react-scroll'
+import * as Scroll from "react-scroll"
 
 import "../../styles/section.scss"
 import "./about-section.scss"
-import data from "../../data/main-page.en.json"
 
 import ResumeForm from "../ResumeForm"
-import Technologies from '../Technologies'
+import Technologies from "../Technologies"
 
 const perks = [
   {
@@ -32,29 +31,30 @@ const perks = [
   },
 ]
 
-const AboutSection = () => {
+const AboutSection = (props) => {
 
   let ScrollHandler = Scroll.Element
   const iconComponents = {
-    FaGraduationCap: <FaGraduationCap />,
-    FiTarget: <FiTarget />,
-    FaStar: <FaStar />,
+    FaGraduationCap: <FaGraduationCap/>,
+    FiTarget: <FiTarget/>,
+    FaStar: <FaStar/>
   }
 
   return (
-  <section id="about" className="section about-section">
+    <section id="about" className="section about-section">
     <ScrollHandler name="about-section" />
     <div>
     <h1 className="section__headline">
-      {data.aboutSection.title}
+      {props.title}
     </h1>
     </div>
     <div className="about-section__content">
       <section className="about-section__perks">
-        {data.aboutSection.perks.map(perk => {
+        {props.perks.map(perk => {
           return (
             <div key={perk.name} className="about-section__perks__perk perk">
-              <div className="perk__icon-wrapper">{iconComponents[perk.icon]}</div>
+              <div
+                className="perk__icon-wrapper">{iconComponents[perk.icon]}</div>
               <div className="perk__content">
                 <h2 className="perk__title">{perk.name}</h2>
                 <p className="perk__description">{perk.description}</p>
@@ -63,7 +63,7 @@ const AboutSection = () => {
           )
         })}
       </section>
-      <ResumeForm />
+      <ResumeForm resumeForm={props.resumeForm}/>
     </div>
     <Technologies />
   </section>
