@@ -25,6 +25,12 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    &__content {
+      max-width: 680px;
+    }
+  }
+
   &__logo {
     display: inline-block;
     margin: 0;
