@@ -1,14 +1,13 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { MdExpandMore } from "react-icons/md"
 
-import * as Scroll from 'react-scroll'
+import * as Scroll from "react-scroll"
 
 import "./hero-image.scss"
-import data from "../../data/main-page.en.json"
 
-const HeroImage = () => {
+const HeroImage = (props) => {
 
   const image = useStaticQuery(graphql`
       query {
@@ -34,17 +33,17 @@ const HeroImage = () => {
       <div className="hero-image__content">
         <div className="hero-image__content__element-wrapper hero-image__content__element-wrapper--upper">
           <h1 className="hero-image__content__element hero-image__content__headline">
-            {data.heroImage.headline}
+            {props.headline}
           </h1>
         </div>
         <div className="hero-image__content__element-wrapper hero-image__content__element-wrapper--middle">
           <button className="hero-image__content__element hero-image__content__button">
-            {data.heroImage.buttonText}
+            {props.buttonText}
           </button>
         </div>
         <div className="hero-image__content__element-wrapper hero-image__content__element-wrapper--bottom">
           <p className="hero-image__content__paragraph">
-            {data.heroImage.description}
+            {props.description}
           </p>
         </div>
       </div>

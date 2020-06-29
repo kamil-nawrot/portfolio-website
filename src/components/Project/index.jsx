@@ -1,14 +1,13 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import Image from "gatsby-background-image"
 
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md"
 
-import './project.scss'
-import data from '../../data/main-page.en.json'
+import "./project.scss"
 
-const Project = () => {
+const Project = (props) => {
 
   const images = useStaticQuery(graphql`
       query {
@@ -42,16 +41,20 @@ const Project = () => {
       fluid={images.projectImages.edges[currentPosition[1]].node.childImageSharp.fluid}
     >
       <section className="project__content">
-        <h2 className="project__content__title">{data.projectsSection.projects[currentPosition[1]].title}</h2>
-        <p className="project__content__description">{data.projectsSection.projects[currentPosition[1]].description}</p>
+        <h2
+          className="project__content__title">{props.projects[currentPosition[1]].title}</h2>
+        <p
+          className="project__content__description">{props.projects[currentPosition[1]].description}</p>
       </section>
       <section className="project__content__navigation">
-        <MdNavigateBefore className="project__content__navigation__arrow" onClick={() => setCurrentPosition(prevPos => prevPos.map(p => {
-          return p === 0 ? (prevPos.length - 1) : p - 1;
-        }))} />
-        <MdNavigateNext className="project__content__navigation__arrow" onClick={() => setCurrentPosition(prevPos => prevPos.map(p => {
-          return p === (prevPos.length - 1) ? 0 : p + 1;
-        }))} />
+        <MdNavigateBefore className="project__content__navigation__arrow"
+                          onClick={() => setCurrentPosition(prevPos => prevPos.map(p => {
+                            return p === 0 ? (prevPos.length - 1) : p - 1
+                          }))}/>
+        <MdNavigateNext className="project__content__navigation__arrow"
+                        onClick={() => setCurrentPosition(prevPos => prevPos.map(p => {
+                          return p === (prevPos.length - 1) ? 0 : p + 1
+                        }))}/>
       </section>
     </BackgroundImage>
       <Image

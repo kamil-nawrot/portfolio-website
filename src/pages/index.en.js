@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
-import * as Scroll from 'react-scroll'
-import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
+import * as Scroll from "react-scroll"
+import ReactScrollWheelHandler from "react-scroll-wheel-handler"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,6 +11,8 @@ import AboutSection from "../components/AboutSection"
 import ProjectsSection from "../components/ProjectsSection"
 import ContactSection from "../components/ContactSection"
 import ScrollIndicator from "../components/ScrollIndicator"
+
+import dataEn from "../data/main-page.en.json"
 
 const IndexPage = ({ location }) => {
 
@@ -37,18 +39,37 @@ const IndexPage = ({ location }) => {
   }
 
   return (
-    <Layout location={location} lang="en">
-      <ScrollIndicator sections={sections} active={currentSection} />
+    <Layout location={location} lang="en" header={dataEn.header}
+            footer={dataEn.footer}>
+      <ScrollIndicator sections={sections} active={currentSection}/>
       <ReactScrollWheelHandler
         upHandler={handleScrollUp}
         downHandler={handleScrollDown}
         timeout={600}
       >
-        <SEO title="Home" />
-        <HeroImage name="hero-image" />
-        <AboutSection name="about-section" />
-        <ProjectsSection name="projects-section" />
-        <ContactSection name="contact-section" />
+        <SEO title="Home"/>
+        <HeroImage
+          name="hero-image"
+          headline={dataEn.heroImage.headline}
+          buttonText={dataEn.heroImage.buttonText}
+          description={dataEn.heroImage.description}
+        />
+        <AboutSection
+          name="about-section"
+          title={dataEn.aboutSection.headline}
+          resumeForm={dataEn.aboutSection.resumeForm}
+          perks={dataEn.aboutSection.perks}
+        />
+        <ProjectsSection
+          name="projects-section"
+          title={dataEn.projectsSection.headline}
+          projects={dataEn.projectsSection.projects}
+        />
+        <ContactSection
+          name="contact-section"
+          title={dataEn.contactSection.headline}
+          contactForm={dataEn.contactSection.contactForm}
+        />
       </ReactScrollWheelHandler>
     </Layout>
   )
