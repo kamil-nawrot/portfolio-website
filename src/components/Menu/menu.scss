@@ -5,6 +5,20 @@
   height: 100px;
   line-height: 100px;
 
+  &--mobile {
+    border: 1px solid red;
+  }
+
+  &__icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__icon {
+    line-height: 160px;
+    font-size: 35px;
+  }
+
   &__items {
     display: inline-block;
   }
@@ -16,5 +30,11 @@
     &:hover {
       color: $color-theme;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-menu {
+    line-height: 125px;
   }
 }
