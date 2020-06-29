@@ -9,6 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi"
 const Menu = ({ location, lang, menuItems, languages, mobile }) => {
 
   const [isMobile, setIsMobile] = useState(mobile)
+  const [menuVisibility, setMenuVisibility] = useState(false)
 
   useEffect((props) => {
     window.addEventListener("resize", () => {
@@ -19,7 +20,7 @@ const Menu = ({ location, lang, menuItems, languages, mobile }) => {
   console.log(isMobile)
 
   return (
-    <nav className="main-menu">
+    <nav className={!isMobile ? "main-menu" : "main-menu--mobile"}>
       {!isMobile ? (
         <>
           <ul className="main-menu__items">
@@ -33,9 +34,20 @@ const Menu = ({ location, lang, menuItems, languages, mobile }) => {
                             languages={languages}/>
         </>
       ) : (
-        <div className="main-menu__icon-wrapper">
-          <GiHamburgerMenu className="main-menu__icon"/>
-        </div>
+        <>
+          <div onClick={() => setMenuVisibility(!menuVisibility)}
+               className="main-menu__icon-wrapper">
+            <GiHamburgerMenu className="main-menu__icon"/>
+          </div>
+          <ul
+            className={`main-menu__items${menuVisibility ? " main-menu__items--active" : ""}`}>
+            {menuItems.map(menuItem => (
+              <li key={menuItem.name} className="main-menu__item">
+                <Link to={menuItem.path}>{menuItem.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </>
       )
       }
     </nav>
