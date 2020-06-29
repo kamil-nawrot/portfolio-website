@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
-import * as Scroll from 'react-scroll'
-import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
+import * as Scroll from "react-scroll"
+import ReactScrollWheelHandler from "react-scroll-wheel-handler"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,7 +12,7 @@ import ProjectsSection from "../components/ProjectsSection"
 import ContactSection from "../components/ContactSection"
 import ScrollIndicator from "../components/ScrollIndicator"
 
-import dataEn from '../data/main-page.en.json'
+import dataEn from "../data/main-page.en.json"
 
 const IndexPage = ({ location }) => {
 
@@ -39,14 +39,15 @@ const IndexPage = ({ location }) => {
   }
 
   return (
-    <Layout location={location} lang="en">
-      <ScrollIndicator sections={sections} active={currentSection} />
+    <Layout location={location} lang="en" header={dataEn.header}
+            footer={dataEn.footer}>
+      <ScrollIndicator sections={sections} active={currentSection}/>
       <ReactScrollWheelHandler
         upHandler={handleScrollUp}
         downHandler={handleScrollDown}
         timeout={600}
       >
-        <SEO title="Home" />
+        <SEO title="Home"/>
         <HeroImage
           name="hero-image"
           headline={dataEn.heroImage.headline}
@@ -55,7 +56,7 @@ const IndexPage = ({ location }) => {
         />
         <AboutSection
           name="about-section"
-          title={dataEn.aboutSection.title}
+          title={dataEn.aboutSection.headline}
           resumeForm={dataEn.aboutSection.resumeForm}
           perks={dataEn.aboutSection.perks}
         />

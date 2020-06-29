@@ -10,10 +10,10 @@ import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 
 import Header from "../Header"
-import Footer from '../Footer'
+import Footer from "../Footer"
 import "./layout.css"
 
-const Layout = ({ location, lang, children }) => {
+const Layout = ({ location, lang, children, header, footer }) => {
   const data = useStaticQuery(graphql`
       query SiteTitleQuery {
           site {
@@ -30,10 +30,16 @@ const Layout = ({ location, lang, children }) => {
 
   return (
     <>
-      <Header location={location} lang={lang} menuItems={data.site.siteMetadata.menuItems} languages={data.site.siteMetadata.languages} />
+      <Header
+        location={location}
+        lang={lang}
+        menuItems={header.menuItems}
+        languages={data.site.siteMetadata.languages}
+        logo={header.logo}
+      />
       <div>
         <main>{children}</main>
-        <Footer />
+        <Footer/>
       </div>
     </>
   )
