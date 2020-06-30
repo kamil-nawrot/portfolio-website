@@ -81,6 +81,17 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    &__content {
+      max-width: 680px;
+      min-width: 680px;
+
+      &__element-wrapper {
+        min-width: 680px;
+      }
+    }
+  }
+
   &__scroll {
     position: absolute;
     bottom: 24px;
