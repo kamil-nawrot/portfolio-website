@@ -13,16 +13,20 @@ import ContactSection from "../components/ContactSection"
 import ScrollIndicator from "../components/ScrollIndicator"
 
 import dataPl from "../data/main-page.pl.json"
+import useWindowSize from "../utils/useWindowSize"
 
 const IndexPage = ({ location }) => {
 
     var scroller = Scroll.scroller
     var scroll = Scroll.animateScroll
+
+    const { width } = useWindowSize()
+
     const sections = ["hero-image-section", "about-section", "projects-section", "contact-section"]
     const [currentSection, setCurrentSection] = useState(0)
 
     const handleScrollUp = () => {
-        if (window.innerWidth > 1440) {
+        if (width > 1440) {
             if (currentSection > 0) {
                 scroller.scrollTo(sections[currentSection - 1], {
                     offset: -100
@@ -33,7 +37,7 @@ const IndexPage = ({ location }) => {
     }
 
     const handleScrollDown = () => {
-        if (window.innerWidth > 1440) {
+        if (width > 1440) {
             if (currentSection < (sections.length - 1)) {
                 scroller.scrollTo(sections[currentSection + 1], {
                     offset: -100

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 import * as Scroll from "react-scroll"
 import ReactScrollWheelHandler from "react-scroll-wheel-handler"
+import useWindowSize from "../utils/useWindowSize"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,11 +19,14 @@ const IndexPage = ({ location }) => {
 
   var scroller = Scroll.scroller
   var scroll = Scroll.animateScroll
+
+  const { width } = useWindowSize()
+
   const sections = ["hero-image-section", "about-section", "projects-section", "contact-section"]
   const [currentSection, setCurrentSection] = useState(0)
 
   const handleScrollUp = () => {
-    if (window.innerWidth > 1440) {
+    if (width > 1440) {
       if (currentSection > 0) {
         scroller.scrollTo(sections[currentSection - 1], {
           offset: -100
@@ -33,7 +37,7 @@ const IndexPage = ({ location }) => {
   }
 
   const handleScrollDown = () => {
-    if (window.innerWidth > 1440) {
+    if (width > 1440) {
       if (currentSection < (sections.length - 1)) {
         scroller.scrollTo(sections[currentSection + 1], {
           offset: -100
