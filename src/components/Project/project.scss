@@ -59,7 +59,6 @@
 }
 
 @media (max-width: 1440px) {
-
   .project-carousel {
     width: calc(100vw - (100vw - 100%));
 
@@ -70,6 +69,18 @@
 
       &__prev, &__next {
         height: 360px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-carousel {
+    .project {
+      min-width: 680px;
+
+      &__prev, &__next {
+        display: none;
       }
     }
   }
