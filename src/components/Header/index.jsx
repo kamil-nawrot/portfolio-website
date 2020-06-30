@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import Menu from "../menu"
 
@@ -8,6 +8,18 @@ import "./header.scss"
 import data from "../../data/main-page.en.json"
 
 const Header = ({ location, lang, menuItems, languages }) => {
+
+  const [isMobile, setIsMobile] = useState(() => {
+    if (window !== undefined) {
+      return window.innerWidth
+    }
+  })
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setIsMobile(window.innerWidth)
+    })
+  })
 
   return (
     <header className="main-header">
@@ -22,7 +34,7 @@ const Header = ({ location, lang, menuItems, languages }) => {
           lang={lang}
           menuItems={data.header.menu}
           languages={data.header.languages}
-          mobile={window.innerWidth <= 1024}
+          mobile={isMobile <= 1024}
         />
       </div>
     </header>
