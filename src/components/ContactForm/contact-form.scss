@@ -72,3 +72,11 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .contact-form {
+    &__section {
+      padding: 8px 16px 12px 16px;
+    }
+  }
+}

@@ -85,3 +85,19 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .project-carousel {
+    .project {
+      min-width: 320px;
+      height: 320px;
+      padding: 20px;
+
+      &__content {
+        &__description {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
