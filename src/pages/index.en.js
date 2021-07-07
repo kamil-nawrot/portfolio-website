@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import * as Scroll from "react-scroll"
 import ReactScrollWheelHandler from "react-scroll-wheel-handler"
@@ -16,13 +16,26 @@ import dataEn from "../data/main-page.en.json"
 
 const IndexPage = ({ location }) => {
 
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (window !== undefined) {
+      if (window.innerWidth > 1440) return true;
+      else return false;
+    }
+  })
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setIsDesktop(window.innerWidth)
+    })
+  })
+
   var scroller = Scroll.scroller
   var scroll = Scroll.animateScroll
   const sections = ["hero-image-section", "about-section", "projects-section", "contact-section"]
   const [currentSection, setCurrentSection] = useState(0)
 
   const handleScrollUp = () => {
-    if (window.innerWidth > 1440) {
+    if (isDesktop) {
       if (currentSection > 0) {
         scroller.scrollTo(sections[currentSection - 1], {
           offset: -100
@@ -33,7 +46,7 @@ const IndexPage = ({ location }) => {
   }
 
   const handleScrollDown = () => {
-    if (window.innerWidth > 1440) {
+    if (isDesktop) {
       if (currentSection < (sections.length - 1)) {
         scroller.scrollTo(sections[currentSection + 1], {
           offset: -100
