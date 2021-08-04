@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
-import useWindowSize from "../../utils/useWindowSize"
+import React, { useEffect, useState } from "react"
 
 import Menu from "../menu"
 
@@ -10,7 +9,17 @@ import data from "../../data/main-page.en.json"
 
 const Header = ({ location, lang, menuItems, languages }) => {
 
-  const { width } = useWindowSize()
+  const [isMobile, setIsMobile] = useState(() => {
+    if (window !== undefined) {
+      return window.innerWidth
+    }
+  })
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setIsMobile(window.innerWidth)
+    })
+  })
 
   return (
     <header className="main-header">
@@ -25,7 +34,11 @@ const Header = ({ location, lang, menuItems, languages }) => {
           lang={lang}
           menuItems={data.header.menu}
           languages={data.header.languages}
+<<<<<<< HEAD
           windowWidth={width}
+=======
+          mobile={isMobile <= 1024}
+>>>>>>> PW-23-move-checking-window-object-properties-to-hooks
         />
       </div>
     </header>
