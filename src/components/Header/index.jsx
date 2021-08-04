@@ -34,11 +34,7 @@ const Header = ({ location, lang, menuItems, languages }) => {
           lang={lang}
           menuItems={data.header.menu}
           languages={data.header.languages}
-<<<<<<< HEAD
-          windowWidth={width}
-=======
           mobile={isMobile <= 1024}
->>>>>>> PW-23-move-checking-window-object-properties-to-hooks
         />
       </div>
     </header>
