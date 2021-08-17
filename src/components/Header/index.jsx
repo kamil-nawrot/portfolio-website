@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react"
 
-import Menu from "../menu"
+import Menu from "../Menu"
 
 import "./header.scss"
 import data from "../../data/main-page.en.json"
