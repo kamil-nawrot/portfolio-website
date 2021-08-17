@@ -9,17 +9,21 @@ import data from "../../data/main-page.en.json"
 
 const Header = ({ location, lang, menuItems, languages }) => {
 
+  const isWindow = typeof window !== "undefined";
+
   const [isMobile, setIsMobile] = useState(() => {
-    if (window !== undefined) {
+    if (isWindow) {
       return window.innerWidth
     }
   })
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth)
+  if (isWindow) {
+    useEffect(() => {
+      window.addEventListener("resize", () => {
+        setIsMobile(window.innerWidth)
+      })
     })
-  })
+  }
 
   return (
     <header className="main-header">
