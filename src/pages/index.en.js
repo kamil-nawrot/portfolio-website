@@ -4,7 +4,7 @@ import * as Scroll from "react-scroll"
 import ReactScrollWheelHandler from "react-scroll-wheel-handler"
 import useWindowSize from "../utils/useWindowSize"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
 import HeroImage from "../components/HeroImage"

@@ -1,7 +1,7 @@
 import React from "react"
 import * as Scroll from "react-scroll"
 
-import Project from "../project"
+import Project from "../Project"
 
 import "../../styles/section.scss"
 import "./projects-section.scss"

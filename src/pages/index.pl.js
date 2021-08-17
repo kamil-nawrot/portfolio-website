@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import * as Scroll from "react-scroll"
 import ReactScrollWheelHandler from "react-scroll-wheel-handler"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
 import HeroImage from "../components/HeroImage"
