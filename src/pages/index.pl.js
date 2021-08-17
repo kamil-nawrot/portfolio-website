@@ -18,7 +18,7 @@ import useWindowSize from "../utils/useWindowSize"
 const IndexPage = ({ location }) => {
 
     const [isDesktop, setIsDesktop] = useState(() => {
-        if (window !== undefined) {
+        if (typeof window !== undefined) {
           if (window.innerWidth > 1440) return true;
           else return false;
         }

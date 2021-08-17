@@ -18,7 +18,7 @@ import dataEn from "../data/main-page.en.json"
 const IndexPage = ({ location }) => {
 
   const [isDesktop, setIsDesktop] = useState(() => {
-    if (window !== undefined) {
+    if (typeof window !== undefined) {
       if (window.innerWidth > 1440) return true;
       else return false;
     }
