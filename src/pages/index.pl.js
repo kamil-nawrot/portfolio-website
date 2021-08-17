@@ -17,18 +17,22 @@ import useWindowSize from "../utils/useWindowSize"
 
 const IndexPage = ({ location }) => {
 
+  const isWindow = typeof window !== "undefined";
+
     const [isDesktop, setIsDesktop] = useState(() => {
-        if (typeof window !== undefined) {
+        if (isWindow) {
           if (window.innerWidth > 1440) return true;
           else return false;
         }
       })
-    
+      
+    if (isWindow) {
       useEffect(() => {
         window.addEventListener("resize", () => {
           setIsDesktop(window.innerWidth)
         })
-    })
+      })
+    }
 
     var scroller = Scroll.scroller
     var scroll = Scroll.animateScroll
