@@ -32,6 +32,9 @@ const handleSubmit = (e) => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: encode({
       "form-name": e.target.getAttribute("name"),
+      "name": e.target[0].value,
+      "mail": e.target[1].value,
+      "content": e.target[2].value
     })
   }).then(() => navigate("/")).catch(error => alert(error))
 }
