@@ -12,8 +12,6 @@ const Menu = ({ location, lang, menuItems, languages, windowWidth }) => {
   const { width } = useWindowSize()
   const [menuVisibility, setMenuVisibility] = useState(false)
 
-  console.log(width)
-
   return (
     <>
       {width !== 1 && ((width < 1024) ? (

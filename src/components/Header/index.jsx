@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react"
 import Menu from "../Menu"
 
 import "./header.scss"
-import data from "../../data/main-page.en.json"
+import dataEn from "../../data/main-page.en.json"
+import dataPl from "../../data/main-page.pl.json"
 
 const Header = ({ location, lang, menuItems, languages }) => {
 
@@ -31,15 +32,15 @@ const Header = ({ location, lang, menuItems, languages }) => {
     <header className="main-header">
       <div className="main-header__content">
         <h1 className="main-header__logo">
-          <Link to={lang === "en" ? "/" : "/pl"} state={{sec: currentSection}} onClick={() => setCurrentSection(0)}>
+          <Link to={lang === "en" ? "/" : "/pl"}>
             <span className="main-header__logo--accent">Kamil</span>Nawrot
           </Link>
         </h1>
         <Menu
           location={location}
           lang={lang}
-          menuItems={data.header.menu}
-          languages={data.header.languages}
+          menuItems={lang === "en" ? dataEn.header.menu : dataPl.header.menu}
+          languages={lang === "en" ? dataEn.header.languages : dataPl.header.languages}
           mobile={isMobile <= 1024}
         />
       </div>

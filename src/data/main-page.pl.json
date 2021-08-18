@@ -3,16 +3,16 @@
     "logo": "KamilNawrot",
     "menu": [
       {
-        "name": "start",
-        "path": "/"
+        "name": "o mnie",
+        "path": "#about"
       },
       {
         "name": "portfolio",
-        "path": "/portfolio"
+        "path": "#projects"
       },
       {
-        "name": "blog",
-        "path": "/blog"
+        "name": "kontakt",
+        "path": "#contact"
       }
     ],
     "languages": ["en", "pl"]
