@@ -48,17 +48,17 @@ const handleSubmit = (e) => {
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[0].name}</span>
-            <input type="text" className="contact-form__form__input"/>
+            <input name="contact-name" type="text" className="contact-form__form__input"/>
           </label>
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[1].name}</span>
-            <input type="text" className="contact-form__form__input"/>
+            <input name="contact-mail" type="text" className="contact-form__form__input"/>
           </label>
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[2].name}</span>
-            <textarea className="contact-form__form__textarea" rows="8"/>
+            <textarea name="contact-text" className="contact-form__form__textarea" rows="8"/>
           </label>
           <button
             className="contact-form__form__button">{props.contactForm.buttonText}</button>
