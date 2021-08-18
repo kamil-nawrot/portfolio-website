@@ -26,7 +26,7 @@ const ContactForm = (props) => {
       fluid={image.contactFormImage.childImageSharp.fluid}
     >
       <section className="contact-form__section">
-        <form className="contact-form__form" name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form className="contact-form__form" name="contact" method="post" action="#contact" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
           <label>
             <span
