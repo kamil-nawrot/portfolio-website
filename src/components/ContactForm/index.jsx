@@ -1,6 +1,6 @@
 import React from "react"
 import BackgroundImage from "gatsby-background-image"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, navigate } from "gatsby"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
 
 import "./contact-form.scss"
@@ -19,6 +19,23 @@ const ContactForm = (props) => {
       }
   `)
 
+  function encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  fetch("/#contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({
+      "form-name": e.target.getAttribute("name"),
+    })
+  }).then(() => navigate("/")).catch(error => alert(error))
+}
+
   return (
     <BackgroundImage
       Tag="section"
@@ -26,7 +43,8 @@ const ContactForm = (props) => {
       fluid={image.contactFormImage.childImageSharp.fluid}
     >
       <section className="contact-form__section">
-        <form className="contact-form__form" method="post" netlify>
+        <form className="contact-form__form" name="contact" method="post" onSubmit={handleSubmit} data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[0].name}</span>
