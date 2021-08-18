@@ -26,7 +26,7 @@ const ContactForm = (props) => {
       fluid={image.contactFormImage.childImageSharp.fluid}
     >
       <section className="contact-form__section">
-        <form className="contact-form__form">
+        <form className="contact-form__form" method="post" netlify>
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[0].name}</span>
