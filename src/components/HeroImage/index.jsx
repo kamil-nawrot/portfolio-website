@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { MdExpandMore } from "react-icons/md"
 
@@ -48,7 +48,9 @@ const HeroImage = (props) => {
         </div>
       </div>
       <aside className="hero-image__scroll">
-        <MdExpandMore className="hero-image__scroll__icon"/>
+        <Link to="#about">
+          <MdExpandMore className="hero-image__scroll__icon"/>
+        </Link>
       </aside>
     </BackgroundImage>
   )
