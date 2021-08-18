@@ -34,6 +34,7 @@ const perks = [
 const AboutSection = (props) => {
 
   let ScrollHandler = Scroll.Element
+
   const iconComponents = {
     FaGraduationCap: <FaGraduationCap/>,
     FiTarget: <FiTarget/>,

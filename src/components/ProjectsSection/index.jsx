@@ -9,7 +9,7 @@ import "./projects-section.scss"
 const ProjectsSection = (props) => {
 
   let ScrollHandler = Scroll.Element
-
+  
   return (
     <section id="projects" className="section projects-section">
       <ScrollHandler name="projects-section"/>

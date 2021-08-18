@@ -16,20 +16,22 @@ const Header = ({ location, lang, menuItems, languages }) => {
       return window.innerWidth
     }
   })
-
-  if (isWindow) {
-    useEffect(() => {
+  
+  useEffect(() => {
+    if (isWindow) {
       window.addEventListener("resize", () => {
         setIsMobile(window.innerWidth)
       })
-    })
-  }
+    }
+  })
+
+  const [currentSection, setCurrentSection] = useState(-1)
 
   return (
     <header className="main-header">
       <div className="main-header__content">
         <h1 className="main-header__logo">
-          <Link to={lang === "en" ? "/" : "/pl"}>
+          <Link to={lang === "en" ? "/" : "/pl"} state={{sec: currentSection}} onClick={() => setCurrentSection(0)}>
             <span className="main-header__logo--accent">Kamil</span>Nawrot
           </Link>
         </h1>

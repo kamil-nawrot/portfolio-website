@@ -26,13 +26,15 @@ const IndexPage = ({ location }) => {
         }
       })
       
-    if (isWindow) {
+
       useEffect(() => {
-        window.addEventListener("resize", () => {
+        if (isWindow) {
+          window.addEventListener("resize", () => {
           setIsDesktop(window.innerWidth)
-        })
+          })
+        }
       })
-    }
+    
 
     var scroller = Scroll.scroller
     var scroll = Scroll.animateScroll
