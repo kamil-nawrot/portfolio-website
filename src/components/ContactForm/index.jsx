@@ -19,26 +19,6 @@ const ContactForm = (props) => {
       }
   `)
 
-  function encode(data) {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&")
-  }
-
-const handleSubmit = (e) => {
-  e.preventDefault()
-  fetch("/#contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({
-      "form-name": e.target.getAttribute("name"),
-      "name": e.target[0].value,
-      "mail": e.target[1].value,
-      "content": e.target[2].value
-    })
-  }).then(() => navigate("/")).catch(error => alert(error))
-}
-
   return (
     <BackgroundImage
       Tag="section"
@@ -46,7 +26,7 @@ const handleSubmit = (e) => {
       fluid={image.contactFormImage.childImageSharp.fluid}
     >
       <section className="contact-form__section">
-        <form className="contact-form__form" name="contact" method="post" onSubmit={handleSubmit} data-netlify="true" data-netlify-honeypot="bot-field">
+        <form className="contact-form__form" name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
           <label>
             <span
