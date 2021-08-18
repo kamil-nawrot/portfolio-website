@@ -3,7 +3,6 @@
 .project-carousel {
   display: flex;
   align-items: center;
-  width: 100vw;
 
   .project {
     position: absolute;
@@ -88,6 +87,8 @@
 
 @media (max-width: 768px) {
   .project-carousel {
+    width: 100%;
+
     .project {
       min-width: 320px;
       height: 320px;
