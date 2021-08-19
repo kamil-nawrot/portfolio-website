@@ -103,6 +103,7 @@ const IndexPage = ({ location }) => {
                 name="contact-section"
                 title={dataPl.contactSection.headline}
                 contactForm={dataPl.contactSection.contactForm}
+                socialLinks={dataPl.aboutSection.resumeForm.socialLinks}
               />
           {/* </ReactScrollWheelHandler> */}
       </Layout>

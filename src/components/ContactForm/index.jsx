@@ -1,6 +1,6 @@
 import React from "react"
 import BackgroundImage from "gatsby-background-image"
-import { graphql, useStaticQuery, navigate } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
 
 import "./contact-form.scss"
@@ -63,7 +63,7 @@ const ContactForm = (props) => {
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[2].name}</span>
-            <textarea id="contact-text" name="contact-text" className="contact-form__form__textarea" form="contact" rows="8" minlength="10" required></textarea>
+            <textarea id="contact-text" name="contact-text" className="contact-form__form__textarea" form="contact" rows="8" minLength="10" required></textarea>
           </label>
           <button
             className="contact-form__form__button">{props.contactForm.buttonText}</button>
@@ -76,9 +76,18 @@ const ContactForm = (props) => {
         <p
           className="contact-form__form__text">{props.contactForm.description}</p>
         <section className="contact-form__section__social-icons">
-          <FaFacebook className="contact-form__section__social-icons__icon"/>
-          <FaGithub className="contact-form__section__social-icons__icon"/>
-          <FaLinkedin className="contact-form__section__social-icons__icon"/>
+          <a href={props.socialLinks.facebook}
+             target="_blank">
+             <FaFacebook className="contact-form__section__social-icons__icon"/>
+          </a>
+          <a href={props.socialLinks.github}
+             target="_blank">
+            <FaGithub className="contact-form__section__social-icons__icon"/>
+          </a>
+          <a href={props.socialLinks.linkedin}
+             target="_blank">
+            <FaLinkedin className="contact-form__section__social-icons__icon"/>
+          </a>
         </section>
       </section>
     </BackgroundImage>

@@ -11,7 +11,7 @@ const ContactSection = (props) => {
     <section id="contact" className="section contact-section">
       <ScrollHandler name="contact-section"/>
       <h1 className="section__headline">{props.title}</h1>
-      <ContactForm contactForm={props.contactForm}/>
+      <ContactForm contactForm={props.contactForm} socialLinks={props.socialLinks} />
     </section>
   )
 }

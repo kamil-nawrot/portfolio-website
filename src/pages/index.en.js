@@ -111,6 +111,7 @@ const IndexPage = ({ location }) => {
           name="contact-section"
           title={dataEn.contactSection.headline}
           contactForm={dataEn.contactSection.contactForm}
+          socialLinks={dataEn.aboutSection.resumeForm.socialLinks}
         />
       {/* </ReactScrollWheelHandler> */}
     </Layout>
