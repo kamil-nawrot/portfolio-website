@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+
+.contact-form__notification {
+    position: fixed;
+    display: block;
+    bottom: 20px;
+    width: 1300px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    margin: 0 auto;
+    border: 2px solid;
+    border-radius: 15px;
+
+    &--success {
+        border-color: $color-success;
+        background: rgba($color-success, 0.8);
+    }
+
+    &--fail {
+        border-color: $color-fail;
+        background: rgba($color-fail, 0.8);
+    }
+}
+
+@media (max-width: 1440px) {
+    .contact-form__notification {
+        width: 900px;
+    }
+}
+  
+@media (max-width: 1024px) {
+    .contact-form__notification {
+        width: 680px;
+    }
+}
+  
+@media (max-width: 768px) {
+    .contact-form__notification {
+        width: 100%;
+        border-radius: 0;
+        bottom: 0;
+    }
+}
+  
