@@ -94,7 +94,7 @@ const ContactForm = (props) => {
           </section>
         </section>
       </BackgroundImage>
-      <SubmissionNotification type="success" />
+      <SubmissionNotification type="fail" messages={props.contactForm.messages} />
     </>
   )
 }

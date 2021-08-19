@@ -96,7 +96,11 @@
       ],
       "buttonText": "Wyślij",
       "title": "Moons harvest from ellipses",
-      "description": "Red alert, coordinates! Evil futures lead to the courage. Spaces harvest on metamorphosis at hyperspace! Make it so, mind! Vogons fly from rumours like united tribbles."
+      "description": "Red alert, coordinates! Evil futures lead to the courage. Spaces harvest on metamorphosis at hyperspace! Make it so, mind! Vogons fly from rumours like united tribbles.",
+      "messages": {
+        "success": "Zapytanie zostało wysłane.",
+        "fail": "Wystąpił nieoczekiwany błąd. Formularz nie został przesłany."
+      }
     }
   },
   "footer": {
