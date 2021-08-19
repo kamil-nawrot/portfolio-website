@@ -22,10 +22,15 @@ const ContactForm = (props) => {
   const handleSubmit = e => {
     e.preventDefault()
     let formData = new FormData(e.target)
+    let textContent = document.getElementById("contact-text").value
+
+    formData.append("contact-text", textContent)
+    let urlData = new URLSearchParams(formData).toString()
+    console.log(urlData)
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
+      body: urlData,
     })
     .then(() => console.log("Form submitted"))
     .catch(err => console.error(err))
@@ -58,7 +63,7 @@ const ContactForm = (props) => {
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[2].name}</span>
-            <textarea name="contact-text" className="contact-form__form__textarea" form="contact" rows="8" minlength="10" required/>
+            <textarea id="contact-text" name="contact-text" className="contact-form__form__textarea" form="contact" rows="8" minlength="10" required></textarea>
           </label>
           <button
             className="contact-form__form__button">{props.contactForm.buttonText}</button>
