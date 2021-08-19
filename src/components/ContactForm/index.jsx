@@ -18,6 +18,18 @@ const ContactForm = (props) => {
           }
       }
   `)
+  
+  const handleSubmit = e => {
+    e.preventDefault()
+    let formData = new FormData(e.target)
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => console.log("Form submitted"))
+    .catch(err => console.error(err))
+  }
 
   return (
     <BackgroundImage
@@ -26,22 +38,27 @@ const ContactForm = (props) => {
       fluid={image.contactFormImage.childImageSharp.fluid}
     >
       <section className="contact-form__section">
-        <form className="contact-form__form" name="contact" method="post" action="#contact" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form 
+          className="contact-form__form" 
+          name="contact" 
+          onSubmit={handleSubmit}
+          data-netlify="true" 
+          data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[0].name}</span>
-            <input name="contact-name" type="text" className="contact-form__form__input"/>
+            <input name="contact-name" type="text" className="contact-form__form__input" required/>
           </label>
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[1].name}</span>
-            <input name="contact-mail" type="text" className="contact-form__form__input"/>
+            <input name="contact-mail" type="email" className="contact-form__form__input" required/>
           </label>
           <label>
             <span
               className="contact-form__form__label">{props.contactForm.fields[2].name}</span>
-            <textarea name="contact-text" className="contact-form__form__textarea" rows="8"/>
+            <textarea name="contact-text" className="contact-form__form__textarea" form="contact" rows="8" minlength="10" required/>
           </label>
           <button
             className="contact-form__form__button">{props.contactForm.buttonText}</button>
