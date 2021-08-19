@@ -2,7 +2,7 @@
 
 .contact-form__notification {
     position: fixed;
-    display: block;
+    display: none;
     bottom: 40px;
     width: 1300px;
     left: 50%;
@@ -12,12 +12,18 @@
     border: 2px solid;
     border-radius: 15px;
 
+    &--none {
+        display: none;
+    }
+
     &--success {
+        display: block;
         border-color: $color-success;
         background: rgba($color-success, 0.8);
     }
 
     &--fail {
+        display: block;
         border-color: $color-fail;
         background: rgba($color-fail, 0.8);
     }

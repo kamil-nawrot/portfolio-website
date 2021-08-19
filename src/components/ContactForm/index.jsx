@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import BackgroundImage from "gatsby-background-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
@@ -20,6 +20,8 @@ const ContactForm = (props) => {
           }
       }
   `)
+
+  const [notificationVisible, setNotificationVisible] = useState("none")
   
   const handleSubmit = e => {
     e.preventDefault()
@@ -34,8 +36,16 @@ const ContactForm = (props) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: urlData,
     })
-    .then(() => console.log("Form submitted"))
-    .catch(err => console.error(err))
+    .then(() => {
+      setNotificationVisible("success")
+    })
+    .catch(err => {
+      console.error(err)
+      setNotificationVisible("fail")
+    })
+    .finally(() => {
+      setTimeout(() => setNotificationVisible("none"), 3000)
+    })
   }
 
   return (
@@ -94,7 +104,7 @@ const ContactForm = (props) => {
           </section>
         </section>
       </BackgroundImage>
-      <SubmissionNotification type="fail" messages={props.contactForm.messages} />
+      <SubmissionNotification type={notificationVisible} messages={props.contactForm.messages} />
     </>
   )
 }
