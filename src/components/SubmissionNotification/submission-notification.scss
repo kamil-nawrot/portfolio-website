@@ -1,5 +1,16 @@
 @import '../../styles/variables.scss';
 
+@keyframes notification_shift {
+    from {
+        bottom: 0;
+        opacity: 1;
+    }
+    to {
+        bottom: 60px;
+        opacity: 0;
+    }
+}
+
 .contact-form__notification {
     position: fixed;
     display: none;
@@ -12,6 +23,12 @@
     border: 2px solid;
     border-radius: 15px;
 
+    animation-name: notification_shift;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+
     &--none {
         display: none;
     }
@@ -20,12 +37,16 @@
         display: block;
         border-color: $color-success;
         background: rgba($color-success, 0.8);
+        animation-name: notification_shift;
+        animation-play-state: running;
     }
 
     &--fail {
         display: block;
         border-color: $color-fail;
         background: rgba($color-fail, 0.8);
+        animation-name: notification_shift;
+        animation-play-state: running;
     }
 
     &__message {
