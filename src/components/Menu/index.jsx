@@ -6,11 +6,22 @@ import useWindowSize from "../../utils/useWindowSize"
 import "./menu.scss"
 import LanguageSwitcher from "../LanguageSwitcher"
 import { GiHamburgerMenu } from "react-icons/gi"
+import { useEffect } from "react"
 
 const Menu = ({ location, lang, menuItems, languages, windowWidth }) => {
 
   const { width } = useWindowSize()
   const [menuVisibility, setMenuVisibility] = useState(false)
+
+  const isWindow = typeof window !== "undefined";
+
+  useEffect(() => {
+    if (isWindow) {
+      window.addEventListener("scroll", () => {
+        setMenuVisibility(false)
+      })
+    }
+  })
 
   return (
     <>
@@ -23,8 +34,8 @@ const Menu = ({ location, lang, menuItems, languages, windowWidth }) => {
           <ul
             className={`main-menu__items${menuVisibility ? " main-menu__items--active" : ""}`}>
             {menuItems.map(menuItem => (
-              <li key={menuItem.name} className="main-menu__item">
-                <Link to={menuItem.path}>{menuItem.name}</Link>
+              <li key={menuItem.name} className={`${menuVisibility ? " main-menu__item--active" : "main-menu__item"}`}>
+                <Link to={menuItem.path} onClick={() => setMenuVisibility(false)}>{menuItem.name}</Link>
               </li>
             ))}
           </ul>
