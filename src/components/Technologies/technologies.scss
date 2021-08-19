@@ -23,6 +23,11 @@
 
 @media (max-width: 768px) {
   .technologies {
+    flex-wrap: wrap;
+    justify-content: center;
 
+    &__icon {
+      margin: 16px;
+    }
   }
 }
