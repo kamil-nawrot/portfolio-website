@@ -18,7 +18,15 @@
 
         &__headline {
             margin-bottom: 4px;
-            line-height: 70px;
+            line-height: 1em;
+            word-break: keep-all;
+            font-weight: 700;
+
+            @media (max-width: 768px) {
+                & {
+                    font-size: 24px;
+                }
+            }
         }
 
         &__button {
@@ -28,6 +36,12 @@
             font-size: 20px;
             color: $color-white;
             text-transform: uppercase;
-          }
+
+            @media (max-width: 768px) {
+                & {
+                    font-size: 15px;
+                }
+            }
+        }
     }
 }
