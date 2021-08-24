@@ -106,5 +106,10 @@
   },
   "footer": {
     "text": "Abnoba, hibrida, et devatio. Orgias sunt vortexs de magnum rumor."
+  },
+  "notFound": {
+    "headline": "Unfortunately, there's nothing here.",
+    "text": "But don't worry, here's something that'll bring you back on track:",
+    "buttonText": "Back to homepage"
   }
 }

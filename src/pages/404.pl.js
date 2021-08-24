@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 
 import "../styles/404-page.scss"
 
-import dataEn from "../data/main-page.en.json"
+import dataPl from "../data/main-page.en.json"
 
 const NotFoundPage = ({ location }) => {
 
@@ -23,8 +23,8 @@ const NotFoundPage = ({ location }) => {
     `)
 
     return (
-        <Layout location={location} lang="en" header={dataEn.header}
-        footer={dataEn.footer}>
+        <Layout location={location} lang="pl" header={dataPl.header}
+        footer={dataPl.footer}>
             <BackgroundImage
                 Tag="section"
                 className="not-found-section"
@@ -32,13 +32,13 @@ const NotFoundPage = ({ location }) => {
             >
                 <div className="not-found-section__content">
                     <h1 className="not-found-section__content__headline">
-                        {dataEn.notFound.headline}
+                        {dataPl.notFound.headline}
                     </h1>
                     <p className="not-found-section__content__paragraph">
-                        {dataEn.notFound.text}
+                        {dataPl.notFound.text}
                     </p>
                     <button className="not-found-section__content__button">
-                        {dataEn.notFound.buttonText}
+                        {dataPl.notFound.buttonText}
                     </button>
                 </div>
             </BackgroundImage>
