@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image" 
 
 import Layout from "../components/Layout"
@@ -37,9 +37,11 @@ const NotFoundPage = ({ location }) => {
                     <p className="not-found-section__content__paragraph">
                         {dataEn.notFound.text}
                     </p>
-                    <button className="not-found-section__content__button">
-                        {dataEn.notFound.buttonText}
-                    </button>
+                    <Link to="/">
+                        <button className="not-found-section__content__button">
+                            {dataEn.notFound.buttonText}
+                        </button>
+                    </Link>
                 </div>
             </BackgroundImage>
         </Layout>
