@@ -76,3 +76,6 @@ yarn-error.log
 *.xml
 *.iml
 .idea/
+
+# VS Code
+.vscode/
