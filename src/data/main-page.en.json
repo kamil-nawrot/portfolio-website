@@ -57,24 +57,27 @@
     "headline": "Check out examples of my expertise",
     "projects": [
       {
+        "title": "COVID-19 Detector",
+        "description": "Master thesis topic, focused on designing and implementing machine learning algorithm for classifying COVID-19 cased based on medical lungs imaging. Solution was written in Python with TensorFlow framework.",
+        "imagePath": "covid19-detector",
+        "url": "https://github.com/kamil-nawrot/master-thesis"
+      },
+      {
         "title": "iCinema",
         "description": "Single Page Application written with React with node.js back-end and simple MongoDB set up. It mocks up the process of booking tickets for screenings, utilising The Movie Database for retrieving information about films.",
-        "imagePath": "sample-project-bg"
+        "imagePath": "icinema",
+        "url": "https://github.com/kamil-nawrot/iCinema"
       },
       {
-        "title": "COVID-19 Detector",
-        "description": "Master thesis topic",
-        "imagePath": "sample-project-bg-2"
+        "title": "Personal Website",
+        "description": "Static page generated with the help of Gatsby, JavaScript framework utilising React ecosystem and syntax.",
+        "imagePath": "personal-website",
+        "url": "https://github.com/kamil-nawrot/portfolio-website"
       },
       {
-        "title": "It is a conscious disconnection",
-        "description": "The dosi is surprisingly biological. Pathways malfunction with devastation at the lunar habitat neveraccelerative, indeed!",
-        "imagePath": "sample-project-bg-3"
-      },
-      {
-        "title": "Cum olla peregrinatione",
-        "description": "Bi-color lanista hic imperiums uria est. Pes grandis homo est. Danista, cacula, et indictio.",
-        "imagePath": "sample-project-bg-4"
+        "title": "World Explorer",
+        "description": "Geography-themed quiz, where you have to name as many cities rom around the world as possible. Written in React with Go back-end. Currently in development, not available publicly.",
+        "imagePath": "world-explorer"
       }
     ]
   },
@@ -96,7 +99,7 @@
         }
       ],
       "buttonText": "Send message",
-      "title": "Moons harvest from ellipses",
+      "title": "Can't wait to hear from you!",
       "description": "If you have any idea, remarks, proposition of cooperation or just want to talk, don't hesitate to contact me. I will always try to answer as soon as possible. You can also use other social channels linked below if you prefer.",
       "messages": {
         "success": "Form was sent successfully.",

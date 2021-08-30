@@ -19,6 +19,7 @@ const Project = (props) => {
                               ...GatsbyImageSharpFluid
                           }
                       }
+                      name
                   }
               }
           }
@@ -29,17 +30,21 @@ const Project = (props) => {
   for (let i = 0; i < images.projectImages.edges.length; i++) initialState.push(i);
   const [currentPosition, setCurrentPosition] = useState(initialState);
 
+  const getImage = (pos) => {
+    return images.projectImages.edges.filter(edge => edge.node.name === props.projects[currentPosition[pos]].imagePath)[0].node.childImageSharp.fluid
+  }
+
   return (
     <article className="project-carousel">
       <Image
         className="project__prev"
         // style={{ position: "absolute" }}
-        fluid={images.projectImages.edges[currentPosition[0]].node.childImageSharp.fluid}
+        fluid={getImage(0)}
       />
     <BackgroundImage
       Tag="section"
       className="project"
-      fluid={images.projectImages.edges[currentPosition[1]].node.childImageSharp.fluid}
+      fluid={getImage(1)}
     >
       <section className="project__content">
         <h2
@@ -60,8 +65,7 @@ const Project = (props) => {
     </BackgroundImage>
       <Image
         className="project__next"
-        // style={{ position: "absolute" }}
-        fluid={images.projectImages.edges[currentPosition[2]].node.childImageSharp.fluid}
+        fluid={getImage(2)}
       />
     </article>
   )

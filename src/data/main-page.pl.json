@@ -20,29 +20,29 @@
   "heroImage": {
     "headline": "Cześć! Jestem Kamil, aspirujący front-end developer",
     "buttonText": "Poznajmy się lepiej!",
-    "description": "For a salted bitter platter, add some BBQ sauce and marmalade. Everyone loves the saltyness of broccoli platter garnishd with canned radish sprouts. Ice fluffy rice in a sauté pan with vinegar for about an hour to upgrade their keenness."
+    "description": "Jestem pasjonatem programowania, który po poznaniu szerokiego wachlarza języków i środowisk zdecydował na stałe osiedlić się wewnątrz przeglądarki. Jestem zmotywowany, aby rozwijać swoją karierę i szlifować umiejętności w obszarze web developmentu."
   },
   "aboutSection": {
-    "title": "Sprawdź kim jestem i w czym mogę Ci pomóc",
+    "title": "Sprawdź, kim jestem, i w czym mogę Ci pomóc",
     "perks": [
       {
         "name": "Solidne podstawy",
-        "description": "Try peeling chili tossed with hollandaise sauce, mashed up with lime. Try soaking the peanut sauce mackerels with sour gravy and remoulade, steamed.",
+        "description": "Ukończyłem studia inżynierskie na kierunku Automatyka i Robotyka, oraz magisterskie na kierunku Computer Engineering - dało mi to możliwość zdobycia wiedzy i umiejętności z wielu dziedzin związanych z branżą IT: od matematycznych i algorytmicznych podstaw, poprzez programowanie niskopoziomowe, aż po zagadnienia uczenia maszynowego i zarządzania projektami.",
         "icon": "FaGraduationCap"
       },
       {
         "name": "Precyzja i staranność",
-        "description": "After smashing the chicken, season chickpeas, steak and salad cream with it in a soup pot. Instead of tossing divided champaign with cracker crumps, use eleven pounds olive oil and one cup vodka jar.",
+        "description": "Każdemu projektowi, w który się angażuję, poświęcam pełnię swojej uwagi i dokładam wszelkich starań, aby efekt końcowy był dopracowany w najmniejszym szczególe.",
         "icon": "FiTarget"
       },
       {
         "name": "Prawdziwa pasja",
-        "description": "Melon tastes best with emeril's essence and lots of basil leafs. Warm, crusted pudding is best rubed with shredded worcestershire sauce. Peanut butter combines greatly with springy turkey.",
+        "description": "Komputery i programowanie znajdują się w moim kręgu zainteresowań już od dziecka. Stworzenie pierwszej strony internetowej w czystym HTML zamieniło zainteresowanie w pasję. Każdy projekt jest dla mnie nową przygodą, a zarazem wyzwaniem.",
         "icon": "FaStar"
       }
     ],
     "resumeForm": {
-      "description": "Salted quinoa can be made large by mashing up with fish sauce. Mash fifteen marshmellows, chickpeas, and dill in a large sauté pan over medium heat, simmer for a handfull minutes and rinse with some seaweed.",
+      "description": "Jeśli moja osoba zainteresowała Cię w kontekście ewentualnej współpracy, użyj przycisku poniżej aby pobrać moje CV i dowiedzieć się więcej",
       "buttonText": "Pobierz CV",
       "socialLinks": {
         "facebook": "https://facebook.com",
@@ -56,24 +56,27 @@
     "headline": "Przekonaj się, co potrafię stworzyć",
     "projects": [
       {
-        "title": "The heavens of justice",
-        "description": "The bliss is an atomic scholar. The bliss of hurting individuals is pure. Order of career will beautifully meet an inner master.",
-        "imagePath": "sample-project-bg"
+        "title": "COVID-19 Detector",
+        "description": "Silnik wykorzystujący uczenie maszynowe i sieci neuronowe do wykrywania przypadków COVID-19 na podstawie zdjęć rentgenowskich płuc; temat mojej pracy magisterskiej, napisany w Pythonie z wykorzystaniem biblioteki TensorFlow.",
+        "imagePath": "covid19-detector",
+        "url": "https://github.com/kamil-nawrot/master-thesis"
       },
       {
-        "title": "C'mon, yuck",
-        "description": "Yarr there's nothing like the heavy-hearted endurance screaming on the lubber. Ho-ho-ho! booty of strength.",
-        "imagePath": "sample-project-bg-2"
+        "title": "iCinema",
+        "description": "Projekt typu SPA, napisany z wykorzystaniem Reacta oraz back-endu w node.js zawierającego prostą bazę danych MongoDB; aplikacja symulująca procedurę rezerwacji biletów kinowych, połączona z filmową bazą danych The Movie Database.",
+        "imagePath": "icinema",
+        "url": "https://github.com/kamil-nawrot/iCinema"
       },
       {
-        "title": "It is a conscious disconnection",
-        "description": "The dosi is surprisingly biological. Pathways malfunction with devastation at the lunar habitat neveraccelerative, indeed!",
-        "imagePath": "sample-project-bg-3"
+        "title": "Personal Website",
+        "description": "Portfolio wygenerowane z pomocą narzędzia Gatsby, działającego z wykorzystaniem infrastruktury i składni Reacta; zaprojektowane i zaimplementowane zupełnie od zera.",
+        "imagePath": "personal-website",
+        "url": "https://github.com/kamil-nawrot/portfolio-website"
       },
       {
-        "title": "Cum olla peregrinatione",
-        "description": "Bi-color lanista hic imperiums uria est. Pes grandis homo est. Danista, cacula, et indictio.",
-        "imagePath": "sample-project-bg-4"
+        "title": "World Explorer",
+        "description": "Gra oparta o geografię i mape, polegająca na odgadywaniu nazw miast z całego świata; aktualnie w fazie rozwoju, niedostępna publicznie.",
+        "imagePath": "world-explorer"
       }
     ]
   },
@@ -95,8 +98,8 @@
         }
       ],
       "buttonText": "Wyślij",
-      "title": "Moons harvest from ellipses",
-      "description": "Red alert, coordinates! Evil futures lead to the courage. Spaces harvest on metamorphosis at hyperspace! Make it so, mind! Vogons fly from rumours like united tribbles.",
+      "title": "Czekam na Twoją wiadomość!",
+      "description": "Jeśli masz jakiekolwiek uwagi, przemyślenia, lub propozycje współpracy - nie wahaj się, skorzystaj z formularza kontaktowego. Postaram się odpowiedzieć najszybciej, jak będę w stanie. Do kontaktu możesz też wykorzystać kanały społecznosciowe widoczne poniżej.",
       "messages": {
         "success": "Zapytanie zostało wysłane.",
         "fail": "Wystąpił nieoczekiwany błąd. Formularz nie został przesłany."
