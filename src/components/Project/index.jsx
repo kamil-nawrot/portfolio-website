@@ -52,7 +52,7 @@ const Project = (props) => {
         <p
           className="project__content__description">{props.projects[currentPosition[1]].description}</p>
         {props.projects[currentPosition[1]].url && 
-          <a className="project__content__button" href={props.projects[currentPosition[1]].url} target="_blank">
+          <a className="project__content__button" href={props.projects[currentPosition[1]].url} target="_blank" rel="noreferrer">
             See on GitHub
           </a>
         }

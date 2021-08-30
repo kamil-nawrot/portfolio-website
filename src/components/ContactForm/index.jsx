@@ -90,15 +90,15 @@ const ContactForm = (props) => {
             className="contact-form__form__text">{props.contactForm.description}</p>
           <section className="contact-form__section__social-icons">
             <a href={props.socialLinks.facebook}
-              target="_blank">
+              target="_blank" rel="noreferrer">
               <FaFacebook className="contact-form__section__social-icons__icon"/>
             </a>
             <a href={props.socialLinks.github}
-              target="_blank">
+              target="_blank" rel="noreferrer">
               <FaGithub className="contact-form__section__social-icons__icon"/>
             </a>
             <a href={props.socialLinks.linkedin}
-              target="_blank">
+              target="_blank" rel="noreferrer">
               <FaLinkedin className="contact-form__section__social-icons__icon"/>
             </a>
           </section>

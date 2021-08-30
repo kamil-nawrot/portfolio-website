@@ -27,7 +27,7 @@ const Menu = ({ location, lang, menuItems, languages, windowWidth }) => {
     <>
       {width !== 1 && ((width < 1024) ? (
         <nav className="main-menu--mobile">
-          <div onClick={() => setMenuVisibility(!menuVisibility)}
+          <div role="button" tabIndex={0} onClick={() => setMenuVisibility(!menuVisibility)} onKeyDown={() => setMenuVisibility(!menuVisibility)}
                className="main-menu__icon-wrapper">
             <GiHamburgerMenu className="main-menu__icon"/>
           </div>

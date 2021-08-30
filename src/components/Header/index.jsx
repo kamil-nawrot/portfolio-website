@@ -26,8 +26,6 @@ const Header = ({ location, lang, menuItems, languages }) => {
     }
   })
 
-  const [currentSection, setCurrentSection] = useState(-1)
-
   return (
     <header className="main-header">
       <div className="main-header__content">

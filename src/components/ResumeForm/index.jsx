@@ -28,14 +28,14 @@ const ResumeForm = (props) => {
       fluid={image.resumeImage.childImageSharp.fluid}
     >
       <p className="resume__text">{props.resumeForm.description}</p>
-      <a className="resume__button" href={resume} download>{props.resumeForm.buttonText}</a>
+      <a role="button" tabIndex={0} className="resume__button" href={resume} download>{props.resumeForm.buttonText}</a>
       <section className="resume__social-icons">
-        <a href={props.resumeForm.socialLinks.facebook}
-           target="_blank"><FaFacebook className="resume__social-icons__icon"/></a>
-        <a href={props.resumeForm.socialLinks.github} target="_blank"><FaGithub
+        <a role="button" tabIndex={0} href={props.resumeForm.socialLinks.facebook}
+           target="_blank" rel="noreferrer"><FaFacebook className="resume__social-icons__icon"/></a>
+        <a role="button" tabIndex={0} href={props.resumeForm.socialLinks.github} target="_blank" rel="noreferrer"><FaGithub
           className="resume__social-icons__icon"/></a>
-        <a href={props.resumeForm.socialLinks.linkedin}
-           target="_blank"><FaLinkedin className="resume__social-icons__icon"/></a>
+        <a role="button" tabIndex={0} href={props.resumeForm.socialLinks.linkedin}
+           target="_blank" rel="noreferrer"><FaLinkedin className="resume__social-icons__icon"/></a>
       </section>
     </BackgroundImage>
   )
