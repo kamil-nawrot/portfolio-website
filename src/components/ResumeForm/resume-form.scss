@@ -15,8 +15,12 @@
 
   &__button {
     margin: 20px auto;
-    padding: 8px 16px;
+    width: 80%;
+    padding: 8px 16px 4px 16px;
     background: $color-white;
+    color: $color-black;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   &__social-icons {

@@ -6,6 +6,8 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 import "../../styles/section.scss"
 import "./resume-form.scss"
 
+import resume from "../../images/KamilNawrot_CV_public.pdf"
+
 const ResumeForm = (props) => {
   const image = useStaticQuery(graphql`
       query {
@@ -26,7 +28,7 @@ const ResumeForm = (props) => {
       fluid={image.resumeImage.childImageSharp.fluid}
     >
       <p className="resume__text">{props.resumeForm.description}</p>
-      <button className="resume__button">{props.resumeForm.buttonText}</button>
+      <a className="resume__button" href={resume} download>{props.resumeForm.buttonText}</a>
       <section className="resume__social-icons">
         <a href={props.resumeForm.socialLinks.facebook}
            target="_blank"><FaFacebook className="resume__social-icons__icon"/></a>
