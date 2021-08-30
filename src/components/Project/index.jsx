@@ -51,9 +51,11 @@ const Project = (props) => {
           className="project__content__title">{props.projects[currentPosition[1]].title}</h2>
         <p
           className="project__content__description">{props.projects[currentPosition[1]].description}</p>
-        <a className="project__content__button" href={props.projects[currentPosition[1]].url} target="_blank">
-          See on GitHub
-        </a>
+        {props.projects[currentPosition[1]].url && 
+          <a className="project__content__button" href={props.projects[currentPosition[1]].url} target="_blank">
+            See on GitHub
+          </a>
+        }
       </section>
       <section className="project__content__navigation">
         <MdNavigateBefore className="project__content__navigation__arrow"
