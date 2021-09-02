@@ -15,7 +15,7 @@ const IndexPage = ({ location }) => {
   return (
     <Layout location={location} lang="en" header={dataEn.header}
             footer={dataEn.footer}>
-        <SEO title="Home"/>
+        <SEO title="Home | Kamil Nawrot"/>
         <HeroImage
           name="hero-image"
           headline={dataEn.heroImage.headline}
