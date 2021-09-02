@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `KamilNawrot`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `KamilNawrot - portfolio`,
+    description: `Personal website of Kamil Nawrot, aspiring front-end developer on the beginning of his journey. Its main goal is to introduce visitors to me and my projects.`,
+    author: `@kamil-nawrot`,
+    url: "https://www.kamilnawrot.pl",
+    image: '/images/thumbnail.png',
     menuItems: [
       {
         name: 'start',
