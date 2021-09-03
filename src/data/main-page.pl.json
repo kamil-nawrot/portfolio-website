@@ -4,15 +4,15 @@
     "menu": [
       {
         "name": "o mnie",
-        "path": "#about"
+        "path": "pl/#about"
       },
       {
         "name": "portfolio",
-        "path": "#projects"
+        "path": "pl/#projects"
       },
       {
         "name": "kontakt",
-        "path": "#contact"
+        "path": "pl/#contact"
       }
     ],
     "languages": ["en", "pl"]
