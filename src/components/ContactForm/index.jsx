@@ -23,9 +23,9 @@ const ContactForm = (props) => {
   `)
 
   let formSchema = yup.object().shape({
-    contact_name: yup.string().required(),
+    contact_name: yup.string().max(64).required(),
     contact_mail: yup.string().email().required(),
-    contact_text: yup.string().min(10).required(),
+    contact_text: yup.string().min(10).max(2000).required(),
   })
 
   const [notificationVisible, setNotificationVisible] = useState("none")
