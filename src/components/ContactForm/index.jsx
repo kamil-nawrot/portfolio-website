@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import BackgroundImage from "gatsby-background-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
+import * as yup from 'yup'
 
 import "./contact-form.scss"
 
@@ -21,7 +22,14 @@ const ContactForm = (props) => {
       }
   `)
 
+  let formSchema = yup.object().shape({
+    contact_name: yup.string().required(),
+    contact_mail: yup.string().email().required(),
+    contact_text: yup.string().min(10).required(),
+  })
+
   const [notificationVisible, setNotificationVisible] = useState("none")
+  const [customMessage, setCustomMessage] = useState(null)
   
   const handleSubmit = e => {
     e.preventDefault()
@@ -30,20 +38,43 @@ const ContactForm = (props) => {
 
     formData.append("contact-text", textContent)
     let urlData = new URLSearchParams(formData).toString()
-    console.log(urlData)
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: urlData,
+
+    console.log(formData.get("contact-name"))
+
+    formSchema.validate({
+      contact_name: formData.get("contact-name"),
+      contact_mail: formData.get("contact-mail"),
+      contact_text: formData.get("contact-text")
     })
-    .then(() => {
-      setNotificationVisible("success")
+    .then(valid => {
+      if (valid) {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: urlData,
+        })
+        .then(() => {
+          setNotificationVisible("success")
+        })
+        .catch(err => {
+          console.error(err)
+          setNotificationVisible("fail")
+        })
+        .finally(() => {
+          setTimeout(() => setNotificationVisible("none"), 3000)
+        })
+      }
     })
     .catch(err => {
-      console.error(err)
-      setNotificationVisible("fail")
-    })
-    .finally(() => {
+      const fieldDict = {
+        "contact_name": "Name",
+        "contact_mail": "E-mail address field",
+        "contact_text": "Message"
+      }
+      const errorMsg = err.errors[0].replace(/\b(?:contact_name|contact_mail|contact_text)\b/gi, matched => fieldDict[matched])
+      console.log(errorMsg)
+      setCustomMessage(errorMsg)
+      setNotificationVisible("fail", errorMsg)
       setTimeout(() => setNotificationVisible("none"), 3000)
     })
   }
@@ -66,17 +97,17 @@ const ContactForm = (props) => {
             <label>
               <span
                 className="contact-form__form__label">{props.contactForm.fields[0].name}</span>
-              <input name="contact-name" type="text" className="contact-form__form__input" required/>
+              <input name="contact-name" type="text" className="contact-form__form__input" />
             </label>
             <label>
               <span
                 className="contact-form__form__label">{props.contactForm.fields[1].name}</span>
-              <input name="contact-mail" type="email" className="contact-form__form__input" required/>
+              <input name="contact-mail" className="contact-form__form__input" />
             </label>
             <label>
               <span
                 className="contact-form__form__label">{props.contactForm.fields[2].name}</span>
-              <textarea id="contact-text" name="contact-text" className="contact-form__form__textarea" form="contact" rows="8" minLength="10" required></textarea>
+              <textarea id="contact-text" name="contact-text" className="contact-form__form__textarea" form="contact" rows="8" ></textarea>
             </label>
             <button
               className="contact-form__form__button">{props.contactForm.buttonText}</button>
@@ -104,7 +135,7 @@ const ContactForm = (props) => {
           </section>
         </section>
       </BackgroundImage>
-      <SubmissionNotification type={notificationVisible} messages={props.contactForm.messages} />
+      <SubmissionNotification type={notificationVisible} messages={props.contactForm.messages} customMessage={customMessage} />
     </>
   )
 }
