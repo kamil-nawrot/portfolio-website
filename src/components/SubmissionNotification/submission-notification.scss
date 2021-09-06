@@ -41,6 +41,14 @@
         animation-play-state: running;
     }
 
+    &--alert {
+        display: block;
+        border-color: $color-alert;
+        background: rgba($color-alert, 0.8);
+        animation-name: notification_shift;
+        animation-play-state: running;
+    }
+
     &--fail {
         display: block;
         border-color: $color-fail;

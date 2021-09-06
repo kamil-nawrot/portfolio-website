@@ -73,7 +73,7 @@ const ContactForm = (props) => {
           })
         } else {
           const errorMsg = "You've recently sent a message. Please wait some time before next."
-          displayNotification("fail", errorMsg)
+          displayNotification("alert", errorMsg)
         }
       }
     })
