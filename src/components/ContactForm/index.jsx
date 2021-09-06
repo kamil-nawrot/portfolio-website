@@ -30,16 +30,20 @@ const ContactForm = (props) => {
 
   const [notificationVisible, setNotificationVisible] = useState("none")
   const [customMessage, setCustomMessage] = useState(null)
+  const [lastSubmissionTime, setLastSubmissionTime] = useState(localStorage.getItem("LAST_SUBMISSION"))
   
+  const displayNotification = (type, message = null) => {
+    if (message) setCustomMessage(message)
+    setNotificationVisible(type)
+    setTimeout(() => setNotificationVisible("none"), 3000)
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     let formData = new FormData(e.target)
     let textContent = document.getElementById("contact-text").value
 
     formData.append("contact-text", textContent)
-    let urlData = new URLSearchParams(formData).toString()
-
-    console.log(formData.get("contact-name"))
 
     formSchema.validate({
       contact_name: formData.get("contact-name"),
@@ -48,21 +52,29 @@ const ContactForm = (props) => {
     })
     .then(valid => {
       if (valid) {
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: urlData,
-        })
-        .then(() => {
-          setNotificationVisible("success")
-        })
-        .catch(err => {
-          console.error(err)
-          setNotificationVisible("fail")
-        })
-        .finally(() => {
-          setTimeout(() => setNotificationVisible("none"), 3000)
-        })
+        if (Date.now() - lastSubmissionTime > 900000) {
+          let urlData = new URLSearchParams(formData).toString()
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: urlData,
+          })
+          .then(() => {
+            displayNotification("success")
+            const submissionDate = Date.now()
+            localStorage.setItem("LAST_SUBMISSION", submissionDate)
+            setLastSubmissionTime(submissionDate)
+          })
+          .catch(err => {
+            displayNotification("fail")
+          })
+          .finally(() => {
+            setTimeout(() => setNotificationVisible("none"), 3000)
+          })
+        } else {
+          const errorMsg = "You've recently sent a message. Please wait some time before next."
+          displayNotification("fail", errorMsg)
+        }
       }
     })
     .catch(err => {
@@ -72,10 +84,7 @@ const ContactForm = (props) => {
         "contact_text": "Message"
       }
       const errorMsg = err.errors[0].replace(/\b(?:contact_name|contact_mail|contact_text)\b/gi, matched => fieldDict[matched])
-      console.log(errorMsg)
-      setCustomMessage(errorMsg)
-      setNotificationVisible("fail", errorMsg)
-      setTimeout(() => setNotificationVisible("none"), 3000)
+      displayNotification("fail", errorMsg)
     })
   }
 
