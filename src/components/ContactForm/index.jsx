@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import BackgroundImage from "gatsby-background-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/all"
@@ -9,6 +9,15 @@ import "./contact-form.scss"
 import SubmissionNotification from "../SubmissionNotification"
 
 const ContactForm = (props) => {
+
+  const isWindow = () => typeof window !== "undefined"
+  let storage
+
+  useEffect(() => {
+    if (isWindow) {
+      storage = window.localStorage
+    }
+  })
 
   const image = useStaticQuery(graphql`
       query {
@@ -30,7 +39,7 @@ const ContactForm = (props) => {
 
   const [notificationVisible, setNotificationVisible] = useState("none")
   const [customMessage, setCustomMessage] = useState(null)
-  const [lastSubmissionTime, setLastSubmissionTime] = useState(localStorage.getItem("LAST_SUBMISSION"))
+  const [lastSubmissionTime, setLastSubmissionTime] = useState(null)
   
   const displayNotification = (type, message = null) => {
     if (message) setCustomMessage(message)
@@ -52,6 +61,7 @@ const ContactForm = (props) => {
     })
     .then(valid => {
       if (valid) {
+        setLastSubmissionTime(storage.getItem("LAST_SUBMISSION"))
         if (Date.now() - lastSubmissionTime > 900000) {
           let urlData = new URLSearchParams(formData).toString()
           fetch("/", {
@@ -62,7 +72,7 @@ const ContactForm = (props) => {
           .then(() => {
             displayNotification("success")
             const submissionDate = Date.now()
-            localStorage.setItem("LAST_SUBMISSION", submissionDate)
+            storage.setItem("LAST_SUBMISSION", submissionDate)
             setLastSubmissionTime(submissionDate)
           })
           .catch(err => {
