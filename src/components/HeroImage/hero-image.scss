@@ -53,9 +53,7 @@
 
     &__headline {
       background-color: $color-white;
-      box-shadow:
-        16px 0 0 $color-white,
-        -16px 0 0 $color-white;
+      box-shadow: 4px 0 0 4px $color-white;
       padding: 8px 0;
       line-height: 70px;
     }

@@ -22,31 +22,31 @@ const AboutSection = (props) => {
 
   return (
     <section id="about" className="section about-section">
-    <ScrollHandler name="about-section" />
-    <div>
-    <h1 className="section__headline">
-      {props.title}
-    </h1>
-    </div>
-    <div className="about-section__content">
-      <section className="about-section__perks">
-        {props.perks.map(perk => {
-          return (
-            <div key={perk.name} className="about-section__perks__perk perk">
-              <div
-                className="perk__icon-wrapper">{iconComponents[perk.icon]}</div>
-              <div className="perk__content">
-                <h2 className="perk__title">{perk.name}</h2>
-                <p className="perk__description">{perk.description}</p>
+      <ScrollHandler name="about-section" />
+      <div>
+        <h1 className="section__headline">
+          {props.title}
+        </h1>
+      </div>
+      <div className="about-section__content">
+        <section className="about-section__perks">
+          {props.perks.map(perk => {
+            return (
+              <div key={perk.name} className="about-section__perks__perk perk">
+                <div
+                  className="perk__icon-wrapper">{iconComponents[perk.icon]}</div>
+                <div className="perk__content">
+                  <h2 className="perk__title">{perk.name}</h2>
+                  <p className="perk__description">{perk.description}</p>
+                </div>
               </div>
-            </div>
-          )
-        })}
-      </section>
-      <ResumeForm resumeForm={props.resumeForm}/>
-    </div>
-    <Technologies />
-  </section>
+            )
+          })}
+        </section>
+        <ResumeForm resumeForm={props.resumeForm}/>
+      </div>
+      <Technologies />
+    </section>
   )
 }
 
